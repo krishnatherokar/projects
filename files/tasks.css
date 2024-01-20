@@ -1,0 +1,356 @@
+:root {
+    --dark1: #202020;
+    --dark2: #404040;
+    --dark3: #606060;
+    --dark4: #808080;
+    --dark5: #A8A8A8;
+    --white1: #ffffff;
+    --white2: #F8F8F8;
+    --white3: #cacaca;
+    --white4: #DEDEDE;
+    --back1: #40404080;
+    --blue1: #705FFF;
+    --blue2: #5FA0FF;
+    --blue3: #e1edff;
+    --green1: #2AFF00;
+    --green2: #EAFFE4;
+    --yellow1: #FFE000;
+    --red1: #ff0000;
+}
+::placeholder {
+    color: var(--dark4);
+    opacity: 1;
+}
+:-ms-input-placeholder {
+    color: var(--dark4);
+}
+::-ms-input-placeholder {
+    color: var(--dark4);
+}
+html {
+    scroll-behavior: smooth;
+}
+hr {
+    border: 0;
+    height: 1px;
+    line-height: 0.6;
+    background: var(--white4);
+}
+body {
+    user-select: none;
+    padding: 60px 10px;
+    font-family: "Quicksand", calibri;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--dark1);
+    background: var(--white2);
+    background-attachment: fixed;
+    background-size: cover;
+}
+.tickButton {
+    border-radius: 50%;
+    border: 2px solid var(--dark2);
+    padding: 4px;
+    margin: 0 10px;
+}
+.delButton, .tickButton {
+    float: right;
+    cursor: pointer;
+    -webkit-tap-highlight-color: #0000;
+    tap-highlight-color: #0000;
+}
+.taskHere, #progress1, #studyInput {
+    word-wrap: break-word;
+    max-width: 500px;
+    border-radius: 12px;
+    margin: 40px auto;
+    padding: 24px 10px 28px 14px;
+}
+.taskHere, #studyInput {
+    background: var(--white1);
+}
+.subHere {
+    word-wrap: break-word;
+    background: var(--white2);
+    margin: 30px 0;
+    padding: 24px 10px 28px 14px;
+    border-radius: 8px;
+}
+#progress1 {
+    text-align: center;
+}
+section[info1="checked"]{
+    background: var(--blue3);
+    color: var(--dark1);
+}
+section[info3="checked"]{
+    background: var(--blue3);
+    color: var(--dark1);
+}
+section[info2="checked"]{
+    border-radius: 50%;
+    border: 2px solid var(--blue1);
+}
+section[info4="checked"]{
+    border-radius: 50%;
+    border: 2px solid var(--blue1);
+}
+section[info5="checked"]{
+    border-radius: 50%;
+    border: 2px solid var(--green1);
+}
+section[info6="checked"]{
+    border-radius: 50%;
+    border: 2px solid var(--yellow1);
+}
+.tickButton svg {
+    height: 14px;
+    width: 14px;
+}
+.delButton svg {
+    height: 26px;
+    width: 26px;
+    padding: 0 2px;
+    margin: 0 6px;
+}
+#taskform, #topnav1, #topnav2 {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(140deg,var(--blue2),var(--blue1));
+    background-size: cover;
+    align-content: center;
+    text-align: center;
+}
+#taskform {
+    padding: 16px 10px 20px 10px;
+}
+#topnav2 {
+    padding: 14px 10px 18px 10px;
+    font-size: 22px;
+    color: var(--white1);
+}
+#topnav1 {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+#topnav1 section:nth-child(1) {
+    color: var(--white1);
+    text-align: left;
+    width: 40%;
+}
+#topnav1 section:nth-child(2) {
+    width: 40%;
+    background: var(--white1);
+    border-radius: 4px;
+    padding: 12px 0;
+}
+#taskForm button, #taskInput, #subInput1, #subInput2, #studyInput button {
+    margin: 0 4px;
+    font-family: "Quicksand", calibri;
+    color: var(--dark3);
+    font-size: 18px;
+    font-weight: 500;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    background: var(--white1);
+}
+#subInput1, #subInput2 {
+    padding: 6px;
+    border: 2px solid var(--white4);
+}
+#studyInput button {
+    background: var(--blue1);
+    color: var(--white1);
+    padding: 8px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: #0000;
+    tap-highlight-color: #0000;
+}
+#subinput1 {
+    width: 100%;
+    margin: 0 0 0 -2px;
+}
+#subinput2 {
+    width: 60px;
+    margin: 10px 0 0 0;
+}
+#taskInput {
+    padding: 6px;
+    width: 70%;
+}
+#taskForm button {
+    padding: 6px 10px;
+}
+input:focus {
+    outline: none;
+}
+button:focus {
+    outline: none;
+}
+#alert1 {
+    background: var(--back1);
+    top: 0px;
+    left:0px;
+    margin: 0px;
+    padding: 0px;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    z-index: 10000;
+    position: fixed;
+}
+#alertmain {
+    background: var(--white1);
+    text-align: center;
+    padding: 30px 10px;
+    font-size: 18px;
+    color: var(--dark1);
+    min-width: 280px;
+    margin: 32vh auto 10px auto;
+    max-width: 240px;
+    border-radius: 12px;
+}
+#alertmain button {
+    margin: 16px 6px 6px 6px;
+    font-family: "Quicksand", calibri;
+    font-size: 18px;
+    font-weight: 500;
+    outline: none;
+    background: #0000;
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: #0000;
+    tap-highlight-color: #0000;
+}
+button[onclick="exitAlert()"]{
+    color: var(--dark2);
+    border: 1px solid var(--dark2);
+}
+.delConf{
+    color: var(--red1);
+    border: 1px solid var(--red1);
+}
+#alertHold{
+    display: none;
+}
+#bottomNav {
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+    position: fixed;
+    padding: 4px 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(140deg,var(--blue2),var(--blue1));
+    background-size: cover;
+    align-content: center;
+    text-align: center;
+}
+.text1 {
+    font-size: 22px;
+    color: var(--dark3);
+}
+.text2 {
+    font-size: 20px;
+    color: var(--dark2);
+}
+.text3, .text4, .text5 {
+    font-size: 16px;
+}
+.text3 {
+    color: var(--blue1);
+}
+.text4 {
+    color: var(--green1);
+}
+.text5 {
+    color: var(--yellow1);
+}
+.text6 {
+    color: var(--dark4);
+    font-weight: 600;
+    font-size: 20px;
+    display: block;
+    margin: 10px 0;
+}
+.text7 {
+    color: var(--dark5);
+    font-weight: 400;
+    font-size: 12px;
+    display: block;
+    margin: 0 0 -20px 0;
+}
+#progressH {
+    text-align: left;
+    margin: 16px 0 0 -4px;
+}
+#progressB {
+    padding: 2px;
+    border-radius: 2px;
+    transition: .4s all;
+}
+.showHide {
+    padding: 0 10px 0 16px;
+    float: right;
+    cursor: pointer;
+    -webkit-tap-highlight-color: #0000;
+    tap-highlight-color: #0000;
+}
+.showHide svg {
+    height: 20px;
+    width: 20px;
+}
+.bottomIc {
+    padding: 12px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: #0000;
+    tap-highlight-color: #0000;
+    transition: .4s all;
+}
+.bottomIc svg {
+    height: 26px;
+    width: 26px;
+    transition: .4s all;
+}
+.bottomIc[state1="active"] {
+    padding: 8px;
+    margin: 4px;
+    background: var(--white1);
+    border-radius: 50%;
+}
+.bottomIc[state1="active"] svg {
+    fill: var(--blue1);
+}
+svg {
+    transition: .4s all;
+}
+svg:active {
+    transform: scale(0.6);
+}
+.trophy {
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+}
+#quoteMain {
+    max-width: 500px;
+    margin: 20vh auto 10px auto;
+    padding: 30px 10px;
+    background: linear-gradient(140deg,var(--blue2),var(--blue1));
+    border-radius: 12px;
+    font-size: 22px;
+    text-align: center;
+    font-family: "Kurale", calibri;
+    color: var(--white1);
+    box-shadow: 8px 8px 20px #705FFF60;
+}
+#taskHold, #studyHold, #quoteHold {
+    display: none;
+}
