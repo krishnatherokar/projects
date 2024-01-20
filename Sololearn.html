@@ -1,0 +1,2633 @@
+<head>
+
+<title>Sololearn</title>
+
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width, initial-scale=1.0">
+    
+<link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+<style>
+    
+:root {
+    --dark1: #202020;
+    --dark2: #404040;
+    --dark3: #606060;
+    --dark4: #808080;
+    --dark5: #909090;
+    --dark6: #202020;
+    --white1: #ffffff;
+    --white2: #f3f3f3;
+    --white3: #cacaca;
+    --white4: #ffffff;
+    --white5: #f3f3f3;
+    --white6: #dddddd;
+    --back1: #00000020;
+    --back2: #bdbdbd40;
+    --blue1: #2689ec;
+    --blue2: #d9e5ff;
+    --green1: #1eff00;
+    --red1: #ff4d2e;
+}
+
+::-webkit-scrollbar {
+    height:6px;
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: var(--white3);
+}
+    
+::-webkit-scrollbar-button {
+    display: none;
+}
+    
+* {
+    font-family: 'DM Sans', calibri;
+    transition: .4s background;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    opacity: .4;
+    background: var(--dark4);
+}
+
+#body {
+    user-select: none;
+    background: var(--white2);
+    color: var(--dark1);
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+}
+
+#alert1 {
+    background: var(--back1);
+    top: 0px;
+    left:0px;
+    margin: 0px;
+    padding: 0px;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    z-index: 10000;
+    backdrop-filter: blur(4px);
+    position: fixed;
+}
+    
+#alertmain {
+    background: var(--white1);
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    color: var(--dark1);
+    min-width: 280px;
+    margin: 16vh auto 10px auto;
+    max-width: 240px;
+    border-radius: 10px;
+}
+
+button {
+    outline: none;
+    border: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+.btn1 {
+    padding: 8px;
+    font-size: 16px;
+    margin: 20px 0 0 0;
+    color: var(--dark1);
+    border: 2px solid var(--dark4);
+    background: var(--white1);
+    border-radius: 4px;
+}
+
+.btn2 {
+    padding: 10px;
+    margin: 20px 0 0 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white4);
+    background: var(--blue1);
+    border-radius: 6px;
+}
+
+.btn3 {
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0 0 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark3);
+    background: var(--white1);
+    border-radius: 6px;
+}
+
+#topnav {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--blue1);
+    transform: 0s background;
+}
+
+#topnav .menu1 {
+    display: inline-block;
+    color: var(--white4);
+    font-size: 26px;
+    padding: 4px 30px 4px 10px;
+}
+
+#topnav .bell1 {
+    height: 30px;
+    width: 30px;
+    padding: 4px 10px;
+    float: right;
+}
+
+#topnav .msg1 {
+    height: 30px;
+    width: 30px;
+    padding: 4px 10px;
+    float: right;
+}
+
+#bottomnav {
+    position: fixed;
+    z-index: 1000;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--white1);
+    box-shadow: 0 -2px 10px var(--back2);
+    color: var(--dark2);
+    font-size: 12px;
+    padding: 0 0 4px 0;
+    text-align: center;
+}
+
+#bottomnav .nav {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-around;
+}
+
+#bottomnav svg, #bottomnav img {
+    height: 30px;
+    width: 30px;
+}
+
+svg {
+    transition: .4s all;
+}
+
+svg:active {
+    transform: scale(0.6);
+}
+
+#bottomnav svg {
+    padding: 8px 8px 2px 8px;
+}
+
+#bottomnav img {
+    margin: 8px 8px 4px 8px;
+    border: none;
+    border-radius: 50%;
+}
+
+#loader1 {
+    background: var(--back1);
+    backdrop-filter: blur(4px);
+    padding: 30vh 10px 10px 10px;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 10000;
+    text-align: center;
+    top: 0;
+    left: 0;
+}
+
+#loader1 .main {
+    background: var(--white1);
+    margin: 0 auto;
+    padding: 20px 60px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.loader2 {
+    margin: 100px auto 18px auto;
+    font-size: 16px;
+    color: var(--dark3);
+    text-align: center;
+    height: 44px;
+}
+
+.loadanim1 {
+    margin: 0 auto;
+    border: 3px solid #0000;
+    border-radius: 50%;
+    border-top: 3px solid var(--dark1);
+    width: 30px;
+    height: 30px;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+}
+
+.loadanim {
+    border: 4px solid #0000;
+    border-radius: 50%;
+    border-top: 4px solid var(--dark1);
+    border-bottom: 4px solid var(--dark1);
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#profile2 #part1 {
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+    padding: 14vh 10px;
+    overflow: hidden;
+    margin: 0 auto;
+    background: var(--blue1);
+    color: var(--white4);
+}
+
+#profile2 #part2 {
+    color: var(--dark1);
+}
+
+#part1 section {
+    margin: 10px 10px;
+}
+
+#avatar {
+    border-radius: 50%;
+    padding: 3px;
+    border: none;
+    background: var(--white4);
+}
+
+#username {
+    font-size: 28px;
+}
+
+.firesvg {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+}
+
+.wrapper {
+    padding: 10px;
+}
+
+.card1 {
+    max-width: 480px;
+    margin: 30px auto;
+    background: var(--white1);
+    box-shadow: 2px 2px 10px var(--back2);
+    padding: 20px 10px;
+    border-radius: 8px;
+    word-wrap: break-word;
+}
+
+.card3 {
+    max-width: 480px;
+    margin: 4px auto;
+    background: var(--white1);
+    box-shadow: 2px 2px 10px var(--back2);
+    padding: 10px;
+    border-radius: 4px;
+    word-wrap: break-word;
+    transition: .4s all;
+}
+
+.card3 * {
+    transition: .4s all;
+}
+
+.streakcard {
+    margin: -50px auto 10px auto;
+    border-radius: 16px 16px 8px 8px;
+}
+
+.column1 {
+    display: block;
+    height: 70px;
+    width: 12px;
+    border-radius: 20px;
+}
+
+.col1 {
+    background: linear-gradient(0deg, var(--blue2) 30%, var(--white2) 30%, var(--white2) 100%);
+}
+
+.col2 {
+    background: linear-gradient(0deg, var(--blue2) 60%, var(--white2) 60%, var(--white2) 100%);
+}
+
+.col3 {
+    background: linear-gradient(0deg, var(--blue2) 80%, var(--white2) 80%, var(--white2) 100%);
+}
+
+#streak {
+    float: right;
+}
+
+.round1, .round2 {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.round1 {
+    background: #0000;
+    border: 2px solid var(--blue1);
+}
+
+.round2 {
+    background: var(--white2);
+}
+
+.days1 span {
+    display: block;
+    text-align: center;
+}
+
+.elemhold {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    margin: 0 auto;
+}
+
+.card2 {
+    min-width: 160px;
+    max-height: 50px;
+    overflow: hidden;
+    margin: 6px 10px;
+    background: var(--white2);
+    line-height: 3;
+    padding: 4px 10px 6px 10px;
+    border-radius: 8px;
+    word-wrap: break-word;
+}
+
+.card2 .codetype {
+    font-size: 14px;
+    color: var(--white4);
+    padding: 10px 8px;
+    background: var(--blue1);
+    border-radius: 4px;
+}
+
+.card2 .codename {
+    word-wrap: unset;
+    font-size: 16px;
+    margin: 10px 8px 0 8px;
+}
+
+.views svg {
+    margin: 0 4px -4px 6px;
+    height: 16px;
+    width: 16px;
+}
+
+.upvotes svg {
+    margin: 0 4px -4px 6px;
+    height: 18px;
+    width: 18px;
+}
+
+#discuss .tag {
+    color: var(--white4);
+    display: inline-block;
+    max-width: 100px;
+    max-height: 18px;
+    overflow: hidden;
+    padding: 6px;
+    border-radius: 4px;
+    background: var(--blue1);
+    margin: 6px 6px 6px 0;
+    font-size: 14px;
+}
+
+#discuss .avatar1 {
+    margin: 10px 0 0 0;
+    height: 32px;
+    width: 32px;
+    float: right;
+    background: var(--white2);
+    border-radius: 50%;
+    border: none;
+    outline: none;
+}
+
+#discuss .upvotes {
+    color: var(--dark3);
+    float: right;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#discuss .views {
+    color: var(--dark4);
+    font-size: 14px;
+}
+
+#discuss .name1 {
+    color: var(--blue1);
+    float: right;
+    display: block;
+    margin: 14px 6px 0 10px;
+}
+
+#discuss .question {
+    color: var(--dark2);
+    width: 80%;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#codes .wrapimg {
+    margin: 0 4px 0 0;
+    width: 50px;
+}
+
+#codes .avatar1 {
+    height: 50px;
+    width: 50px;
+    background: var(--white2);
+    border-radius: 50%;
+    border: none;
+    outline: none;
+}
+
+#codes .upvotes {
+    float: right;
+    color: var(--dark4);
+    margin: 0 6px 0 0;
+    font-size: 14px;
+}
+
+#codes .views {
+    float: right;
+    color: var(--dark4);
+    font-size: 14px;
+}
+
+#codes .name1 {
+    font-size: 14px;
+    color: var(--blue1);
+    display: block;
+}
+
+#codes .codename1 {
+    color: var(--dark2);
+    width: 90%;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#fade1 {
+    transition: 60ms all;
+}
+
+.courseround {
+    display: block;
+    height: 80px;
+    min-height: 80px;
+    min-width: 80px;
+    width: 80px;
+    margin: 30px 10px 10px 10px;
+    border-radius: 50%;
+    padding: 4px;
+    background: var(--white1);
+}
+
+.coachimg {
+    display: block;
+    height: 80px;
+    min-height: 80px;
+    min-width: 80px;
+    width: 80px;
+    margin: 30px 10px 10px 10px;
+    border-radius: 4px;
+    background: var(--white1);
+    border: 2px solid var(--white2);
+}
+
+.fullbor {
+    border: 2px solid var(--green1);
+}
+
+.halfbor {
+    border-top: 2px solid var(--green1);
+    border-right: 2px solid var(--green1);
+    border-bottom: 2px solid var(--white2);
+    border-left: 2px solid var(--white2);
+}
+
+.partbor {
+    border-top: 2px solid var(--green1);
+    border-right: 2px solid var(--white2);
+    border-bottom: 2px solid var(--white2);
+    border-left: 2px solid var(--white2);
+}
+
+.card3 input {
+    float: right;
+}
+
+#chlhold {
+    margin: 20px 0;
+    padding: 10px 10px 14px 10px;
+    border-radius: 12px;
+    background: linear-gradient(108deg, var(--dark5) 49%, var(--white4) 49%, var(--white4) 50%, var(--white3) 50%);
+}
+
+#chlhold img {
+    display: block;
+}
+
+.avatar2 {
+    height: 80px;
+    width: 80px;
+    padding: 3px;
+    margin: 5px 0;
+    background: var(--white5);
+    border-radius: 50%;
+    border: none;
+    outline: none;
+}
+
+.user1 {
+    margin: 8px 4px -6px 10px;
+}
+
+.arroww1, .arroww2 {
+    padding: 0 8px 0 10px;
+    display: inline-block;
+    transform: rotate(270deg);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--dark2);
+}
+
+.arroww1:hover {
+    color: var(--blue1);
+}
+
+.arroww2:hover {
+    color: var(--blue1);
+}
+
+.time1 {
+    margin: 0 0 0 10px;
+    font-size: 14px;
+    color: var(--dark4);
+    float: right;
+}
+
+.likess {
+    font-size: 14px;
+    display: inline-block;
+}
+
+#feed .card1, #feedhold2 .card1 {
+    padding: 20px 0;
+}
+
+#feed .time1 {
+    margin-right: 10px;
+}
+
+.content1 {
+    padding: 10px 10px 20px 10px;
+    margin: 10px;
+    background: var(--white2);
+    border-radius: 4px;
+}
+
+.maincont {
+    display: block;
+    margin: 0 30px;
+}
+
+.ic1 {
+    margin: -10px 10px -20px 0;
+    font-size: 40px;
+}
+
+.ic2 {
+    margin: -10px 0 -20px 10px;
+    font-size: 40px;
+}
+
+.postimg1 {
+    margin: 10px 0;
+    width: 100%;
+    height: 260px;
+    background: var(--white2);
+}
+
+#notif .avatar1 {
+    margin: 0 10px -6px 0;
+    height: 32px;
+    width: 32px;
+    background: var(--white2);
+    border-radius: 50%;
+    border: none;
+    outline: none;
+}
+
+.avatar4 {
+    margin: 0 6px 0 10px;
+    height: 32px;
+    width: 32px;
+    background: var(--white2);
+    border-radius: 50%;
+    border: none;
+    outline: none;
+}
+
+#notif .card3 {
+    padding-bottom: 20px;
+}
+
+#msg .avatar1 {
+    margin: 0 10px -6px 0;
+    height: 40px;
+    width: 40px;
+    background: var(--white2);
+    border-radius: 50%;
+    display: block;
+    border: none;
+    outline: none;
+}
+
+#topnav .avatar1 {
+    margin: 6px 6px -6px 4px;
+    height: 30px;
+    width: 30px;
+    background: var(--white2);
+    border-radius: 50%;
+    display: block;
+    border: none;
+    outline: none;
+}
+
+#topnav #backsvg {
+    padding: 10px;
+    height: 20px;
+    width: 20px;
+}
+
+#topnav .size3 {
+    text-align: left;
+    width: 100px;
+    padding: 10px;
+}
+
+#topnav .flex {
+    max-width: 200px;
+}
+
+#msg .main1 {
+    width: 86%;
+}
+
+#bottomnav2 {
+    position: fixed;
+    z-index: 10000;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--blue1);
+    color: var(--dark6);
+    font-size: 12px;
+    text-align: center;
+}
+
+#form1 {
+    padding: 6px;
+    margin: 0;
+    width: 100%;
+}
+
+#bottomnav2 input {
+    padding: 6px;
+    margin: 0 10px;
+    background: var(--white4);
+    border: none;
+    color: var(--dark6);
+    border-radius: 4px;
+    width: 90%;
+}
+
+#bottomnav2 button {
+    padding: 0;
+    margin: 0 10px;
+    background: #0000;
+    border: none;
+}
+
+#form1 {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#livemsg {
+    max-width: 600px;
+    margin: 50px auto 120px auto;
+    padding: 0 10px;
+}
+
+button svg {
+    height: 40px;
+    width: 40px;
+}
+
+button:focus, input:focus {
+    outline: none;
+}
+
+.whitespace1 {
+    width: 100%;
+}
+    
+.innermsghold1 {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.innermsg1 {
+    background: var(--blue1);
+    background-size: contain;
+    padding: 10px;
+    border-radius: 20px;
+    border-bottom-right-radius: 0px;
+    margin: 4px 0;
+    max-width: 300px;
+    word-wrap: break-word;
+    color: var(--white4);
+}
+
+.innermsg2 {
+    background: var(--white1);
+    background-size: contain;
+    padding: 10px;
+    border-radius: 20px;
+    border-bottom-left-radius: 0px;
+    margin: 4px 0;
+    max-width: 300px;
+    word-wrap: break-word;
+    color: var(--dark2);
+}
+
+#suggestions {
+    width: 100%;
+    background: var(--white2);
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    margin: 0 auto;
+}
+
+.pill1 {
+    padding: 6px;
+    margin: 6px 2px;
+    text-align: center;
+    background: var(--white1);
+    border-radius: 4px;
+    color: var(--blue1);
+    font-size: 14px;
+}
+
+.pill2 {
+    min-width: 100px;
+    text-align: center;
+    padding: 6px;
+    margin: 6px 2px;
+    background: #0000;
+    color: var(--dark3);
+    font-size: 14px;
+}
+
+@keyframes vibe {
+    50% {margin: 0px 1px 4px 1px;}
+}
+
+.dott {
+    display: inline-block;
+    height: 6px;
+    width: 6px;
+    background: var(--dark2);
+    border-radius: 50%;
+    margin: 4px 1px 0px 1px;
+    animation: vibe .6s linear infinite;
+}
+
+.dothold {
+    min-width: 30px;
+    text-align: center;
+}
+
+.dot1 {
+    animation-delay: 0s;
+}
+
+.dot2 {
+    animation-delay: .1s;
+}
+
+.dot3 {
+    animation-delay: .2s;
+}
+
+.memeimg {
+    height: 260px;
+    width: 260px;
+    background: var(--white2);
+    border-radius: 16px;
+}
+
+#sidenav {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 10000;
+    backdrop-filter: blur(4px);
+    background: var(--back1);
+    height: 100vh;
+    width: 100vw;
+}
+
+#sidediv1 {
+    padding: 10px;
+    height: 100vh;
+    margin: 0 0 0 -300px;
+    background: var(--white1);
+    min-width: 280px;
+    transition: .4s all;
+}
+
+.sidediv2 {
+    height: 100vh;
+    width: 100%;
+}
+
+.circle1 {
+    margin: 6px;
+    min-height: 50px;
+    min-width: 50px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.circle2 {
+    margin: 6px;
+    min-height: 60px;
+    min-width: 60px;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+.circlename {
+    color: var(--dark2);
+    font-size: 14px;
+    min-width: 50px;
+    text-align: center;
+}
+
+.tophold {
+    display: flex;
+    justify-content: space-around;
+}
+
+.tophold .size4 {
+    padding: 9px 0;
+    margin: 0 10px;
+    text-align: center;
+    border-radius: 1px;
+}
+
+#swipe1, #swipe2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.swipewrap {
+    height: 100vh;
+    display: flex;
+    transition: .4s all;
+}
+
+#community, #feed, #notif, #msg {
+    width: 100%;
+    height: 100vh;
+    overflow: scroll;
+}
+
+#info1 .txtleft {
+    line-height: 1.8;
+    font-size: 16px;
+    padding: 10px;
+    color: var(--dark2);
+}
+
+.dropdown .drophold {
+    display: none;
+    position: fixed;
+    left: 10px;
+    top: 90px;
+    background: var(--white1);
+    border-radius: 2px;
+    font-size: 14px;
+    min-width: 140px;
+    box-shadow: 4px 4px 20px var(--back1);
+    color: var(--dark2);
+    z-index: 100;
+}
+
+.drophold section {
+    padding: 10px 12px;
+    border: 1px solid var(--back1);
+}
+
+.drop1 {
+    font-size: 14px;
+    color: var(--dark1);
+    display: inline-block;
+    padding: 10px;
+    background: var(--white2);
+    border-radius: 2px;
+}
+
+.dropdown {
+    position: fixed;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 10px 10px 0 10px;
+    margin: 0 0 4px 0;
+    background: var(--white1);
+    box-shadow: 2px 2px 10px var(--back2);
+}
+
+#code1 .card3, #ques .card3 {
+    line-height: 1.4;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+.dropdown input {
+    width: 50vw;
+    padding: 8px;
+    font-size: 14px;
+    background-color: var(--white2);
+    color: var(--dark1);
+    border-radius: 4px;
+    border: none;
+}
+
+.dropdown form {
+    display: inline-block;
+}
+
+.dropdown button svg {
+    height: 20px;
+    width: 20px;
+}
+
+.dropdown button {
+    padding: 6px 10px 4px 10px;
+    background-color: #0000;
+    border: none;
+    font-size: 20px;
+    border-radius: 4px;
+}
+
+#bio {
+    max-height: 90px;
+    overflow: hidden;
+}
+
+#feed .avatar2 {
+    float: left;
+    margin: 0 10px;
+}
+
+#feed .btn2 {
+    float: right;
+    margin-right: 10px;
+    margin-top: 6px;
+}
+
+#feed .whathold1 {
+    margin-bottom: 0px;
+}
+
+#topinfo {
+    position: fixed;
+    top: 2px;
+    right: 2px;
+    padding: 4px;
+    border-radius: 50%;
+    background: var(--red1);
+    color: var(--white4);
+    font-size: 10px;
+    z-index: 100000;
+    display: inline-block;
+}
+
+@media only screen and (min-width: 560px) {
+    .round1 {
+        height: 36px;
+        width: 36px;
+    }
+    .round2 {
+        height: 40px;
+        width: 40px;
+    }
+    .tick {
+        margin: 7px 0 0 8px;
+        height: 20px;
+        width: 20px;
+    }
+    .days1 span {
+        font-size: 16px;
+        width: 20px;
+        padding: 10px 0 0 0;
+    }
+    #avatar {
+        height: 180px;
+        width: 180px;
+    }
+    #feed .card1, #feedhold2 .card1 {
+        max-width: 500px;
+    }
+    .tophold .size4 {
+        width: 40%;
+    }
+    .swipewrap {
+        width: 100vw;
+    }
+    .tophold .size4 {
+        border: 3px solid #0000;
+    }
+    #community, #feed, #notif, #msg {
+        min-width: 50vw;
+    }
+}
+
+@media only screen and (max-width: 560px) {
+    .round1 {
+        height: 32px;
+        width: 32px;
+    }
+    .round2 {
+        height: 36px;
+        width: 36px;
+    }
+    .tick {
+        margin: 6px 0 0 7px;
+        height: 18px;
+        width: 18px;
+    }
+    .days1 span {
+        font-size: 14px;
+        width: 16px;
+        padding: 6px 0 0 0;
+    }
+    #avatar {
+        height: 160px;
+        width: 160px;
+    }
+    .tophold .size4 {
+        width: 50%;
+    }
+    .swipewrap {
+        width: 200vw;
+    }
+    #community, #feed, #notif, #msg {
+        min-width: 100vw;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    #codes .wrapcode {
+        width: 76%;
+    }
+}
+
+@media only screen and (min-width: 400px){
+    #codes .wrapcode {
+        width: 84%;
+    }
+}
+
+.center1 {
+    text-align: center;
+}
+
+.fixedleft {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.txtleft {
+    text-align: left;
+}
+
+.top40 {
+    padding: 40px 0 0 0;
+}
+
+.top20 {
+    padding: 20px 0 0 0;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.txtclr1 {
+    color: var(--white1);
+}
+
+.txtclr2 {
+    color: var(--white2);
+}
+
+.txtclr3 {
+    color: var(--white3);
+}
+
+.txtclr4 {
+    color: var(--dark2);
+}
+
+.txtclr5 {
+    color: var(--dark3);
+}
+
+.txtclr6 {
+    color: var(--dark4);
+}
+
+.txtclr7 {
+    color: var(--white4);
+}
+
+.txtclr8 {
+    color: var(--white5);
+}
+
+.txtclr9 {
+    color: var(--white6);
+}
+
+.redclr1 {
+    color: var(--red1);
+}
+
+.blueclr1 {
+    color: var(--blue1);
+}
+
+.size1 {
+    font-size: 14px;
+}
+
+.size2 {
+    font-size: 16px;
+}
+
+.size3 {
+    font-size: 18px;
+}
+
+.size4 {
+    font-size: 20px;
+}
+
+.size5 {
+    font-size: 24px;
+}
+
+.size6 {
+    font-size: 28px;
+}
+
+#mainn, #loader1, #discuss, .endtxt, #codes, #profile2, #learn, #options, #swipe1, #swipe2, #topnav, #bottomnav, #chatbot, #sidediv2 {
+    display: none;
+}
+
+</style>
+</head>
+<body id="body">
+
+    <script>
+        //define function for random numbers
+        function randomNumber1(min, max) {
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+        //define function for streak circles
+        function round1(iid){
+            document.getElementById(iid).innerHTML += '<section class="round1"><svg class="tick" viewBox="0 0 490 490" style="enable-background:new 0 0 490 490;" xml:space="preserve" fill="var(--blue1)"><polygon points="452.253,28.326 197.831,394.674 29.044,256.875 0,292.469 207.253,461.674 490,54.528 "/><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></><g></g><g></g><g></g><g></g></svg></section>';
+        }
+        //define function for stereak circles
+        function round2(iid){
+            document.getElementById(iid).innerHTML += '<section class="round2"></section>';
+        }
+        //define function for creatig question
+        function question1(iid, ques1, tag, id1, user, likes){
+            document.getElementById(iid).innerHTML += '<section class="card3"><span class="upvotes"><svg fill="var(--dark4)" viewBox="0 0 512 512"><path d="M256,156c0-9.2-7.5-16.7-16.7-16.7h-86.4L164,86.4c0.2-1.2,0.4-2.6,0.4-3.9c0-5.2-2.1-9.8-5.5-13.2L145.7,56l-82.3,82.3  c-4.5,4.5-7.3,10.8-7.3,17.7v108.3c0,13.8,11.2,25,25,25h112.5c10.3,0,19.2-6.2,23-15.2l37.8-88.2c1.1-2.8,1.8-5.8,1.8-9.1V156z   M431,222.7H318.5c-10.3,0-19.2,6.2-23,15.2l-37.8,88.2c-1.1,2.8-1.7,5.8-1.7,9.1V356c0,9.2,7.5,16.7,16.7,16.7h86.4L348,425.6  c-0.2,1.2-0.4,2.6-0.4,3.9c0,5.2,2.1,9.8,5.5,13.2l13.3,13.2l82.3-82.3c4.5-4.5,7.3-10.8,7.3-17.7V247.7  C456,233.8,444.8,222.7,431,222.7z"></path></svg>'+likes+'</span><span class="question">'+ques1+'</span><br><span class="tag">'+tag+'</span><img onclick="profile1(\''+user+'\')" class="avatar1" src="https://api.sololearn.com/Uploads/Avatars/'+id1+'.jpg" onerror=this.src="https://i.ibb.co/PY8P0Cd/sololearn1-1.webp"><span onclick="profile1(\''+user+'\')" class="name1">'+user+'</span><span class="views"><svg fill="var(--dark4)" viewBox="0 0 24 24"><path d="M15 12c0 1.654-1.346 3-3 3s-3-1.346-3-3 1.346-3 3-3 3 1.346 3 3zm9-.449s-4.252 8.449-11.985 8.449c-7.18 0-12.015-8.449-12.015-8.449s4.446-7.551 12.015-7.551c7.694 0 11.985 7.551 11.985 7.551zm-7 .449c0-2.757-2.243-5-5-5s-5 2.243-5 5 2.243 5 5 5 5-2.243 5-5z"/></svg> '+randomNumber1(100, 1000)+'</span></section>';
+        }
+        //define function for creating course icon
+        function course1(iid, src, cls){
+            document.getElementById(iid).innerHTML += '<img class="courseround '+cls+'"  src="'+src+'" onerror=this.src="https://i.ibb.co/ZMnpdy0/Course1.png">';
+        }
+        //define function for creating coach icon
+        function coach1(iid, src){
+            document.getElementById(iid).innerHTML += '<img class="coachimg"  src="'+src+'" onerror=this.src="https://i.ibb.co/ZMnpdy0/Course1.png">';
+        }
+        //define function for creating code
+        function code3(iid, id1, codename1, user, likes){
+            document.getElementById(iid).innerHTML += '<section class="card3 flex"><section class="wrapimg"><img class="avatar1" onclick="profile1(\''+user+'\')" src="https://api.sololearn.com/Uploads/Avatars/'+id1+'.jpg" onerror=this.src="https://i.ibb.co/PY8P0Cd/sololearn1-1.webp"></section><section class="wrapcode"><span class="codename1">'+codename1+'</span><span class="name1"><span onclick="profile1(\''+user+'\')">'+user+'</span></span><span class="views"><svg viewBox="0 0 15.571 15.571"><g><g><path style="fill:var(--dark4);" d="M3.73,3.771h0.708c0.26,0,0.471-0.166,0.471-0.374V0.373C4.909,0.166,4.7,0,4.438,0H3.73    C3.47,0,3.258,0.167,3.258,0.373v3.024C3.258,3.605,3.47,3.771,3.73,3.771z"/><path style="fill:var(--dark4);" d="M11.132,3.771h0.707c0.263,0,0.471-0.166,0.471-0.374V0.373C12.31,0.166,12.102,0,11.839,0h-0.707    c-0.26,0-0.471,0.167-0.471,0.373v3.024C10.662,3.605,10.872,3.771,11.132,3.771z"/><path style="fill:var(--dark4);" d="M14.751,1.443h-1.876v2.316c0,0.517-0.465,0.938-1.037,0.938h-0.707    c-0.572,0-1.038-0.421-1.038-0.938V1.443h-4.62v2.316c0,0.517-0.465,0.938-1.038,0.938H3.73c-0.57,0-1.037-0.421-1.037-0.938    V1.443H0.816c-0.312,0-0.566,0.255-0.566,0.568v12.994c0,0.313,0.254,0.566,0.347,0.566h13.938c0.53,0,0.786-0.253,0.786-0.566    V2.009C15.32,1.698,15.064,1.443,14.751,1.443z M14.447,14.287c0,0.564-0.486,0.515-0.486,0.515H8.88c0,0,3.107-1.557,5.567-3.768    C14.447,11.034,14.447,13.635,14.447,14.287z M14.554,9.474c-0.213,0.841-0.684,1.815-1.543,1.178    c-1.252-0.927-2.486-1.714-2.645,0.15c-0.131,1.57-3.033,3.705-3.665,4.151H1.193c-0.099,0-0.177-0.079-0.177-0.177v-8.01    c0-0.099,0.079-0.178,0.177-0.178h13.184c0.097,0,0.178,0.079,0.178,0.178L14.554,9.474L14.554,9.474z"/><rect x="3.258" y="7.97" style="fill:var(--dark4);" width="2.202" height="2.201"/><rect x="6.88" y="7.97" style="fill:var(--dark4);" width="2.2" height="2.201"/><rect x="3.258" y="11.309" style="fill:var(--dark4);" width="2.202" height="2.201"/><path style="fill:var(--dark4);" d="M6.88,13.51h0.637c0.465-0.436,1.168-1.157,1.563-1.652v-0.549h-2.2V13.51z"/><path style="fill:var(--dark4);" d="M10.386,9.008c0.222-0.217,0.489-0.283,0.729-0.283c0.453,0,0.952,0.253,1.471,0.596V7.97h-2.2    V9.008z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg> '+randomNumber1(2, 24)+' Hrs<svg fill="var(--dark4)" viewBox="0 0 24 24"><path d="M15 12c0 1.654-1.346 3-3 3s-3-1.346-3-3 1.346-3 3-3 3 1.346 3 3zm9-.449s-4.252 8.449-11.985 8.449c-7.18 0-12.015-8.449-12.015-8.449s4.446-7.551 12.015-7.551c7.694 0 11.985 7.551 11.985 7.551zm-7 .449c0-2.757-2.243-5-5-5s-5 2.243-5 5 2.243 5 5 5 5-2.243 5-5z"/></svg> '+randomNumber1(200, 2000)+'</span><span class="upvotes"><svg fill="var(--dark4)" viewBox="0 0 512 512"><path d="M256,156c0-9.2-7.5-16.7-16.7-16.7h-86.4L164,86.4c0.2-1.2,0.4-2.6,0.4-3.9c0-5.2-2.1-9.8-5.5-13.2L145.7,56l-82.3,82.3  c-4.5,4.5-7.3,10.8-7.3,17.7v108.3c0,13.8,11.2,25,25,25h112.5c10.3,0,19.2-6.2,23-15.2l37.8-88.2c1.1-2.8,1.8-5.8,1.8-9.1V156z   M431,222.7H318.5c-10.3,0-19.2,6.2-23,15.2l-37.8,88.2c-1.1,2.8-1.7,5.8-1.7,9.1V356c0,9.2,7.5,16.7,16.7,16.7h86.4L348,425.6  c-0.2,1.2-0.4,2.6-0.4,3.9c0,5.2,2.1,9.8,5.5,13.2l13.3,13.2l82.3-82.3c4.5-4.5,7.3-10.8,7.3-17.7V247.7  C456,233.8,444.8,222.7,431,222.7z"/></svg>'+likes+'</span></section></section>';
+        }
+        //define function for creating comments & etc
+        function feed1(iid, id1, user, title, content){
+            document.getElementById(iid).innerHTML += '<section class="card1"><img class="avatar4" onclick="profile1(\''+user+'\')" src="https://api.sololearn.com/Uploads/Avatars/'+id1+'.jpg" onerror=this.src="https://i.ibb.co/PY8P0Cd/sololearn1-1.webp"><span onclick="profile1(\''+user+'\')" class="blueclr1 size2">'+user+' </span><span class="txtclr5 size2">'+title+'</span><br><section class="content1"><span class="right ic2">"</span><span class="maincont">'+content+'</span><span class="left ic1">"</span></section><span class="arroww1">&gt;</span><span class="likess">+'+randomNumber1(10, 100)+'</span><span class="arroww2">&lt;</span><span class="time1">'+randomNumber1(2, 24)+' Hrs</span></section>';
+        }
+        //define function for creating post
+        function feed2(iid, id1, user, title, imgsrc){
+            document.getElementById(iid).innerHTML += '<section class="card1"><img class="avatar4" onclick="profile1(\''+user+'\')" src="https://api.sololearn.com/Uploads/Avatars/'+id1+'.jpg" onerror=this.src="https://i.ibb.co/PY8P0Cd/sololearn1-1.webp"><span onclick="profile1(\''+user+'\')" class="blueclr1 size2">'+user+' </span><span class="txtclr5 size2">'+title+'</span><br><img class="postimg1" src="'+imgsrc+'" onload=this.style.height="auto" onerror=this.src="https://i.ibb.co/K5kTHpD/Noimg.png"><span class="arroww1">&gt;</span><span class="likess">+'+randomNumber1(10, 1000)+'</span><span class="arroww2">&lt;</span><span class="time1">'+randomNumber1(2, 24)+' Hrs</span></section>';
+        }
+        //define function for creating notification
+        function notif1(iid, id1, user, title){
+            document.getElementById(iid).innerHTML += '<section class="card3"><img class="avatar1" onclick="profile1(\''+user+'\')" src="https://api.sololearn.com/Uploads/Avatars/'+id1+'.jpg" onerror=this.src="https://i.ibb.co/PY8P0Cd/sololearn1-1.webp"><span onclick="profile1(\''+user+'\')" class="blueclr1 size2">'+user+' </span><span class="txtclr6 size2">'+title+'</span><span class="txtclr3 time1">'+randomNumber1(2, 24)+' Hrs</span></section>';
+        }
+        //define function for creating DMs
+        function msg3(iid, id1, user, title){
+            document.getElementById(iid).innerHTML += '<section class="card3"><span class="txtclr3 time1">'+randomNumber1(2, 24)+' Hrs</span><section class="flex"><img onclick="profile1(\''+user+'\')" class="avatar1" src="https://api.sololearn.com/Uploads/Avatars/'+id1+'.jpg" onerror=this.src="https://i.ibb.co/PY8P0Cd/sololearn1-1.webp"><section onclick="chatbot2('+id1+', \''+user+'\')" class="main1"><span class="blueclr1 size2">'+user+'</span><br><span class="txtclr6 size2">'+title+'</span></section></section></section>';
+        }
+        //define function for creating suggestions
+        function sugest(iid, wid, sug){
+            document.getElementById(iid).innerHTML += '<span class="pill1" style="min-width:'+wid+'px" onclick="setvalue(\''+sug+'\')">'+sug+'</span>';
+        }
+    </script>
+    
+    <section id="alert1">
+        <section id="alertmain">
+            <section id="cross1" onclick="alert2()" class="right size5">&#10005;</section>
+            <section id="info1"><section class="txtleft">
+                <b>&#x00B7;</b> Approx all icons are working.<br>
+                <b>&#x00B7;</b> You can chat in messenger<br>
+                <b>&#x00B7;</b> You can change the sorting (trending/recent)<br>
+                <b>&#x00B7;</b> Swiping gestures are working<br>
+                <hr><section class="center1"><span class="size1 txtclr5">Made by Krishna Therokar</span></section>
+            </section></section>
+            <button onclick="alert2()" class="btn1" id="btn1">Next</button>
+        </section>
+    </section>
+    
+    <section id="mainn">
+        <section id="topnav"></section>
+        <section id="bottomnav">
+            <section class="nav flex">
+                <section class="high2">
+                    <svg class="high1" viewBox="0 0 1000 1000" fill="var(--dark1)" onclick="learn1()">
+                        <g><g transform="translate(0.000000,511.000000) scale(0.100000,-0.100000)"><path d="M4711.7,4556.3c-678.3-413.1-2744-1671.7-3618.3-2205.9c-526.5-319-964.6-582.2-976.1-582.2c-9.6,0-17.3-7.7-17.3-19.2c0-9.6,11.5-19.2,26.9-19.2c13.5,0,1116.4-664.9,2450-1477.7l2423.1-1477.7l1687.1,1028C7613.2,367.3,8383.8,834.3,8397.2,840c17.3,7.7,23.1-334.4,23.1-1673.7v-1683.3h307.5h307.4v1879.3l1.9,1877.4l397.8,240.2c219.1,132.6,413.1,242.1,432.3,246c34.6,7.7,46.1,42.3,13.5,42.3c-9.6,0-1104.9,661-2430.7,1470c-1327.8,809-2423.1,1475.7-2436.5,1479.6C4999.9,4723.5,4865.4,4650.4,4711.7,4556.3z M6856.1,2880.7c1008.8-614.9,1833.2-1122.2,1833.2-1129.9c-1.9-19.2-3658.6-2238.6-3689.4-2238.6c-38.4,0-3689.4,2223.2-3683.6,2242.4c5.8,21.1,3650.9,2240.5,3681.7,2242.4C5011.5,3997.1,5849.3,3493.7,6856.1,2880.7z"/><path d="M2213.7-1298.7c0-1216.3,3.8-1254.8,124.9-1500.7c82.6-167.2,257.5-349.7,424.7-443.9c61.5-36.5,251.7-138.4,420.8-228.7c169.1-90.3,647.6-357.4,1062.6-595.7l755.2-430.4l445.8,257.5c611,353.6,1176,670.6,1531.5,857c438.1,232.5,563,342,693.7,607.2c107.6,221,113.4,278.6,113.4,1477.7c0,864.7-5.8,1089.5-23.1,1081.8c-13.5-3.8-634.1-378.5-1379.7-832c-745.5-451.6-1368.1-822.4-1383.5-822.4c-15.4,0-638,370.9-1383.5,822.4c-745.6,453.5-1366.2,828.2-1377.7,832C2219.5-209.1,2213.7-434,2213.7-1298.7z M3933.5-1959.7c574.5-347.8,1054.9-634.1,1066.5-634.1c11.5,0,491.9,284.4,1066.5,634.1c572.6,347.8,1056.9,639.9,1076.1,645.6c28.8,11.5,30.7-32.7,25-551.5c-7.7-760.9,26.9-703.3-624.5-1053c-232.5-124.9-674.5-372.8-981.9-547.6l-561.1-320.9l-572.6,324.7c-595.7,340.1-1091.4,614.9-1272.1,705.2c-128.8,63.4-219.1,146-274.8,249.8c-40.4,73-42.3,105.7-48,641.8c-5.8,509.2-3.8,563,25,551.5C2874.7-1319.8,3358.9-1609.9,3933.5-1959.7z"/></g></g>
+                    </svg><br>Learn
+                </section>
+                <section class="high2">
+                    <svg class="high1" viewBox="0 0 24 24" fill="var(--dark1)"  onclick="swipe1show1()">
+                        <path d="M0 0h24v24H0z" fill="none"/><path d="M16.5 13c-1.2 0-3.07.34-4.5 1-1.43-.67-3.3-1-4.5-1C5.33 13 1 14.08 1 16.25V19h22v-2.75c0-2.17-4.33-3.25-6.5-3.25zm-4 4.5h-10v-1.25c0-.54 2.56-1.75 5-1.75s5 1.21 5 1.75v1.25zm9 0H14v-1.25c0-.46-.2-.86-.52-1.22.88-.3 1.96-.53 3.02-.53 2.44 0 5 1.21 5 1.75v1.25zM7.5 12c1.93 0 3.5-1.57 3.5-3.5S9.43 5 7.5 5 4 6.57 4 8.5 5.57 12 7.5 12zm0-5.5c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 5.5c1.93 0 3.5-1.57 3.5-3.5S18.43 5 16.5 5 13 6.57 13 8.5s1.57 3.5 3.5 3.5zm0-5.5c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/>
+                    </svg><br>Community
+                </section>
+                <section class="high2">
+                    <svg class="high1" viewBox="0 0 24 24" fill="var(--dark1)" onclick="codes1()">
+                        <g><path id="left-bracket" d="M4,12v-1h1c1,0,1,0,1-1V7.614C6,7.1,6.024,6.718,6.073,6.472C6.127,6.22,6.212,6.009,6.33,5.839   C6.534,5.56,6.803,5.364,7.138,5.255C7.473,5.14,8.01,5,8.973,5H10v1H9.248c-0.457,0-0.77,0.191-0.936,0.408   C8.145,6.623,8,6.853,8,7.476v1.857c0,0.729-0.041,1.18-0.244,1.493c-0.2,0.307-0.562,0.529-1.09,0.667   c0.535,0.155,0.9,0.385,1.096,0.688C7.961,12.484,8,12.938,8,13.665v1.862c0,0.619,0.145,0.848,0.312,1.062   c0.166,0.22,0.479,0.407,0.936,0.407L10,17l0,0v1H8.973c-0.963,0-1.5-0.133-1.835-0.248c-0.335-0.109-0.604-0.307-0.808-0.591   c-0.118-0.165-0.203-0.374-0.257-0.625C6.024,16.283,6,15.9,6,15.387V13c0-1,0-1-1-1H4z"/><use transform="matrix(-1,0,0,1,24,0)" id="right-bracket" xlink:href="#left-bracket"/>
+                        </g>
+                    </svg><br>Code
+                </section>
+                <section class="high2">
+                    <svg class="high1" viewBox="0 0 1000 1000" fill="var(--dark1)" onclick="discuss1()">
+                        <g><path d="M904.9,248.9L413.7,249c-46.6,0.5-84.2,32.3-84.2,71.6v412.6c0.1,39.3,38.7,71.2,85.2,71.6h310.7l121.6,102.4c8.3,7,21.8,7,30.1,0c4.1-3.4,6.2-8.2,6.2-12.7v-89.7h21.3c47,0,85.1-32.1,85.2-71.6V320.7C990,281.1,951.9,249,904.9,248.9L904.9,248.9z M904.8,769l-42.8,0c-5.4,0.1-10.7,1.8-14.8,5.2c-3.9,3.3-6,8.4-6.2,12.7v64.3L743.2,769H414.8c-23.5,0-42.6-16.1-42.6-35.9V320.7c0-19.8,19.1-35.9,42.6-35.9h490c23.5,0,42.6,16.1,42.6,35.9v412.5C947.4,753,928.3,769,904.8,769L904.8,769z"/><path d="M734.4,159.2c0-39.3-37.6-71.2-84.2-71.7L95.1,87.5c-47,0.1-85.1,32.1-85.1,71.7v466.4c0.1,39.6,38.2,71.6,85.2,71.6h21.3V787c0.1,4.5,2.2,9.3,6.2,12.7c8.3,7,21.8,7,30.1,0c0.1-0.1,86.6-72.9,127.8-107.6c3.9-3.2,6.3-7.8,6.3-12.7c0-9.9-9.5-17.9-21.3-17.9c-5.9,0-11.2,2-15.1,5.3l-91.5,77v-64.3c-0.2-4.3-2.3-9.4-6.2-12.7c-4.1-3.5-9.5-5.2-14.8-5.2l-42.8,0c-23.5,0-42.6-16.1-42.6-35.9V159.3c0-19.8,19.1-35.9,42.6-35.9h553.9c23.5,0,42.6,16.1,42.6,35.9v35.9c0,9.9,9.5,17.9,21.3,17.9c11.8,0,21.3-8,21.3-17.9L734.4,159.2L734.4,159.2z"/><path d="M502.8,503.2c-8.8,0-16.4,3.1-22.8,9.3c-6.4,6.2-9.6,13.9-9.6,23.1c0,8.4,3.2,15.8,9.6,22.2c6.4,6.4,14,9.6,22.8,9.6c8.8,0,16.3-3.2,22.5-9.6c6.2-6.4,9.3-13.8,9.3-22.2c0-9.2-3.1-16.9-9.3-23.1C519,506.3,511.5,503.2,502.8,503.2z"/><path d="M654.4,503.2c-8.8,0-16.4,3.1-22.8,9.3c-6.4,6.2-9.6,13.9-9.6,23.1c0,8.4,3.2,15.8,9.6,22.2c6.4,6.4,14,9.6,22.8,9.6c8.8,0,16.3-3.2,22.5-9.6c6.2-6.4,9.3-13.8,9.3-22.2c0-9.2-3.1-16.9-9.3-23.1C670.6,506.3,663.1,503.2,654.4,503.2z"/><path d="M828.4,512.5c-6.2-6.2-13.7-9.3-22.5-9.3c-8.8,0-16.4,3.1-22.8,9.3c-6.4,6.2-9.6,13.9-9.6,23.1c0,8.4,3.2,15.8,9.6,22.2c6.4,6.4,14,9.6,22.8,9.6c8.8,0,16.3-3.2,22.5-9.6c6.2-6.4,9.3-13.8,9.3-22.2C837.7,526.4,834.6,518.7,828.4,512.5z"/><path d="M262.5,367.8c-9.5,0-17.7,3.3-24.6,10c-6.9,6.7-10.3,15-10.3,24.9c0,9.1,3.5,17,10.3,23.9c6.9,6.9,15.1,10.4,24.6,10.4c9.5,0,17.6-3.5,24.3-10.4c6.7-6.9,10-14.9,10-23.9c0-9.9-3.3-18.2-10-24.9C280.1,371.2,272,367.8,262.5,367.8z"/></g>
+                    </svg><br>Discuss
+                </section>
+                <section class="high2">
+                    <img onclick="profile1('Krishna Therokar')" src="https://api.sololearn.com/Uploads/Avatars/20596770.jpg" onerror=this.src="https://i.ibb.co/PY8P0Cd/sololearn1-1.webp"><br>Profile
+                </section>
+            </section>
+        </section>
+        <section id="loader1">
+            <section class="main"><section class="loadanim"></section><br>Fetching...</section>
+        </section>
+        <section id="profile2">
+            <section id="part1">
+                <section id="fade1"><img id="avatar" onerror=this.src="https://i.ibb.co/PY8P0Cd/sololearn1-1.webp"></section>
+                <section class="txtclr7" id="username"></section>
+                <section class="txtclr9"><span class="bold" id="xps">0</span> Xp <b>&#x00B7;</b> Lvl <span class="bold" id="levell">0</span></section>
+                <section class="txtclr8" id="bio"></section>
+                <section class="txtclr9"><span class="bold" id="followers">0</span> followers <b>&#x00B7;</b> <span class="bold" id="following">0</span> following</section>
+            </section>
+            <section class="wrapper">
+                <section class="card1 streakcard" id="part2">
+                    <span class="txtclr6">STREAK</span><span class="redclr1 bold" id="streak">0 DAYS STREAK</span>
+                    <section class="top40"></section>
+                    <section id="streakflex1" class="flex"></section>
+                    <section class="flex days1">
+                        <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+                    </section><hr>
+                    <section class="flex">
+                        <span class="column1 col1"></span>
+                        <span class="column1 col2"></span>
+                        <span class="column1 col2"></span>
+                        <span class="column1 col3"></span>
+                        <span class="column1 col1"></span>
+                        <span class="column1 col3"></span>
+                        <span class="column1 col2"></span>
+                    </section>
+                    <section class="top20"></section>
+                </section>
+                <section id="part3" class="card1">
+                    <span class="txtclr6">CODES</span><br><br>
+                    <section id="codeshold" class="elemhold"></section>
+                </section>
+                <section id="part4" class="card1">
+                    <span class="txtclr6">ACTIVITY</span>
+                    <section class="flex top20">Posts, Quostions, Comments and more</section>
+                    <section class="flex"><button onclick="feed4()" class="btn2">SEE ACTIVITY</button></section>
+                    <section class="top20"></section>
+                </section>
+                <section class="card1 streakcard" id="part5"><span class="txtclr6">ACTIVITY</span></section>
+                <section id="feedhold2"></section>
+            </section>
+            <section class="top40"></section>
+            <section class="top20"></section>
+        </section>
+        <section id="discuss">
+            <section class="top40"></section>
+            <section class="top40"></section>
+            <section class="top20"></section>
+            <section class="dropdown">
+                <section onclick="dropshow()" class="drop1">Trending</section>
+                <form id="form3"><input id="input3" type="search" placeholder="Search questions" autocomplete="off"><button type="submit"><svg fill="var(--dark1)" viewBox="0 0 50 50"><path d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z"/></svg></button></form>
+                <section class="drophold">
+                    <section onclick="showques1('Trending', '')">Trending</section>
+                    <section onclick="showques1('Most recent', '')">Most recent</section>
+                    <section onclick="showques1('Unanswered', '')">Unanswered</section>
+                </section>
+            </section>
+            <section id="ques"></section>
+            <section class="loader2"><section class="loadanim1"></section></section>
+            <section class="top40"></section>
+            <section class="top20"></section>
+        </section>
+        <section id="codes">
+            <section class="top40"></section>
+            <section class="top40"></section>
+            <section class="top20"></section>
+            <section class="dropdown">
+                <section onclick="dropshow()" class="drop1">Hot today</section>
+                <form id="form2"><input id="input2" type="search" placeholder="Search codes" autocomplete="off"><button type="submit"><svg fill="var(--dark1)" viewBox="0 0 50 50"><path d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z"/></svg></button></form>
+                <section class="drophold">
+                    <section onclick="showcode1('Hot today', '')">Hot today</section>
+                    <section onclick="showcode1('Trending', '')">Trending</section>
+                    <section onclick="showcode1('Most popular', '')">Most popular</section>
+                    <section onclick="showcode1('Most recent', '')">Most recent</section>
+                </section>
+            </section>
+            <section id="code1"></section>
+            <section class="loader2"><section class="loadanim1"></section></section>
+            <section class="top40"></section>
+            <section class="top20"></section>
+        </section>
+        <section id="learn">
+            <section class="top40"></section>
+            <section class="wrapper">
+                <section class="card1">
+                    <section class="top20"></section>
+                    <span onclick="scroll1(1)"  class="right size1 blueclr1 viewbtn">VIEW MORE</span>
+                    <span class="txtclr5 size3">Become a Data Scientist</span><br>
+                    <span class="txtclr6 size1">Unlock data insights</span><br>
+                    <section id="coursehold1" class="elemhold"></section>
+                    <section class="top20"></section>
+                </section>
+                <section class="card1">
+                    <section class="top20"></section>
+                    <span onclick="scroll1(2)" class="right size1 blueclr1 viewbtn">VIEW MORE</span>
+                    <span class="txtclr5 size3">Become a Web Developer</span><br>
+                    <span class="txtclr6 size1">Learn at your own. Become and expert</span><br>
+                    <section id="coursehold2" class="elemhold"></section>
+                    <section class="top20"></section>
+                </section>
+                <section class="card1">
+                    <section class="top20"></section>
+                    <span onclick="scroll1(3)" class="right size1 blueclr1 viewbtn">VIEW MORE</span>
+                    <span class="txtclr5 size3">Programming languages</span><br>
+                    <section id="coursehold3" class="elemhold"></section>
+                    <section class="top20"></section>
+                </section>
+            </section>
+            <section class="top40"></section>
+            <section class="top20"></section>
+        </section>
+        <section id="options">
+            <section class="top20"></section>
+            <section class="top40">
+                <section class="card3">
+                    <section class="top20"></section>
+                    <section class="size3">FEATURES</section><hr>
+                    <section class="size2 top20"><b>&#x00B7;</b> Approx all icons are working.</section>
+                    <section class="size2 top20"><b>&#x00B7;</b> You can chat in messenger.</section>
+                    <section class="size2 top20"><b>&#x00B7;</b> You can change the sorting (trending/recent).</section>
+                    <section class="size2 top20"><b>&#x00B7;</b> Swiping gestures are working. You can swipe to go from practice to feed or notifs to messages section and vice versa.</section>
+                    <section class="size2 top20"><b>&#x00B7;</b> This code have responsive layout. It will adjust itself according to your screen size. Compatible with all devices.</section>
+                    <section class="size2 top20"><b>&#x00B7;</b> I have compressed media files in this code to reduce loading time.</section>
+                    <section class="size2 top20"><b>&#x00B7;</b> This code have error handlers for approx every possible error.</section>
+                    <section class="size2 top20"><b>&#x00B7;</b> Added themes & modes so that user can customise the look.</section>
+                    <section class="size2 top20"><b>&#x00B7;</b> This code have smooth UI and animations.</section>
+                    <section class="size2 top20"><b>&#x00B7;</b> No external library or framework used expect google fonts and jquery.</section>
+                    <section class="size2 top20"><b>&#x00B7;</b> Focused on reducing the code lines by using js to create repeted elements.</section>
+                    <section class="size2 top20"><b>&#x00B7;</b> Focused on increasing the performance so that it can also work fine in low end devices.</section>
+                    <section class="top20"></section>
+                </section>
+                <section class="top20"></section>
+                <section class="card3">
+                    <section class="top20"></section>
+                    <section class="size3">SETTINGS</section><hr>
+                    <section class="size2 top20">Push Notifications</section>
+                    <section class="size2 top20">Sound <input type="checkbox"></section>
+                    <section class="size2 top20">Location Services <input type="checkbox"></section>
+                    <section class="size2 top20">Language</section>
+                    <section class="top20"></section><hr>
+                    <section class="size2">Sign Out</section>
+                    <section class="top20"></section>
+                </section>
+            </section>
+            <section class="top40"></section>
+            <section class="top20"></section>
+        </section>
+        <section id="swipe1"><section class="swipewrap"><section id="community">
+            <section class="top40"></section>
+            <section class="wrapper">
+                <section class="card1">
+                    <section class="top20"></section>
+                    <span onclick="scroll1(4)" class="right size1 blueclr1 viewbtn">VIEW MORE</span>
+                    <span class="txtclr5 size3">Code Coach</span><br>
+                    <span class="txtclr6 size1">Practice by solving coding challanges & earn points</span><br>
+                    <section id="coursehold4" class="elemhold"></section>
+                    <section class="top20"></section>
+                </section>
+                <section class="card1">
+                    <section class="top20"></section>
+                    <span onclick="scroll1(5)" class="right size1 blueclr1 viewbtn">VIEW MORE</span>
+                    <span class="txtclr5 size3">By the community</span><br>
+                    <span class="txtclr6 size1">Developed by & for Community</span><br>
+                    <section id="coursehold5" class="elemhold"></section>
+                    <section class="top20"></section>
+                </section>
+                <section class="card1">
+                    <section class="top20"></section>
+                    <span class="txtclr5 size3">Coding Challanges</span><br>
+                    <span class="txtclr6 size1">Choose your language and select an opponent to test your might</span><br>
+                    <section id="chlhold">
+                        <section class="flex">
+                            <img class="avatar2" src="https://api.sololearn.com/Uploads/Avatars/20596770.jpg" onerror=this.src="https://i.ibb.co/PY8P0Cd/sololearn1-1.webp">
+                            <img class="avatar2" src="https://i.ibb.co/PY8P0Cd/sololearn1-1.webp">
+                        </section>
+                        <button onclick="chl2()" class="btn3">Start a Challange</button>
+                    </section>
+                </section>
+            </section>
+            <section class="top40"></section>
+        </section>
+        <section id="feed">
+            <section class="top20"></section>
+            <section class="top40 card1 whathold1">
+                <img class="avatar2" src="https://api.sololearn.com/Uploads/Avatars/20596770.jpg" onerror=this.src="https://i.ibb.co/PY8P0Cd/sololearn1-1.webp">
+                <section><span class="txtclr5 size4">Krishna</span><br><span class="txtclr6 size2">What's going on?</span></section><button class="btn2">DISCOVER PEERS</button><br><br>
+            </section>
+            <section id="feedhold1" class="wrapper"></section>
+            <section class="top40"></section>
+            <section class="top20"></section>
+        </section></section></section>
+        <section id="swipe2"><section class="swipewrap"><section id="notif">
+            <section class="top40"></section>
+            <section id="notifhold1"></section>
+            <section class="top40"></section>
+            <section class="top20"></section>
+        </section>
+        <section id="msg">
+            <section class="top40"></section>
+            <section id="msghold1"></section>
+            <section class="top40"></section>
+            <section class="top20"></section>
+        </section></section></section>
+        <section id="chatbot">
+            <section id="livemsg"></section>
+            <section id="bottomnav2">
+                <section id="suggestions"><span class="pill2">Suggestions: </span></section>
+                <form id="form1" class="flex">
+                    <input id="inputformsg" type="text" placeholder="Enter your message" autocomplete="off" required><br>
+                    <button type="submit"><svg viewBox="0 0 240 240"><circle cx="120" cy="120" r="120" fill="var(--white4)"/><path fill="#c8daea" d="M98 175c-3.888 0-3.227-1.468-4.568-5.17L82 132.207 170 80"/><path fill="var(--blue1)" d="M98 175c3 0 4.325-1.372 6-3l16-15.558-19.958-12.035"/><path fill="var(--blue1)" d="M100.04 144.41l48.36 35.729c5.519 3.045 9.501 1.468 10.876-5.123l19.685-92.763c2.015-8.08-3.08-11.746-8.36-9.349l-115.59 44.571c-7.89 3.165-7.843 7.567-1.438 9.528l29.663 9.259 68.673-43.325c3.242-1.966 6.218-.91 3.776 1.258"/></svg></button>
+                </form>
+            </section>
+        </section>
+        <section id="sidenav" class="flex">
+            <section id="sidediv1">
+                <section onclick="settingexit()" class="right size6">&#10005;</section>
+                <section class="top20"></section>
+                <section class="size1 txtclr6">Manage your Theme and Mode</section><hr>
+                <section class="top20"></section>
+                <section id="modethemehold">
+                    <section class="blueclr1 size1 center1">THEME</section>
+                    <section id="themehold">
+                        <section class="flex">
+                            <section onclick="theme1('2689ec')" class="circle1" style="background: #2689ec;"></section>
+                            <section onclick="theme1('5d6263')" class="circle1" style="background: #5d6263;"></section>
+                            <section onclick="theme1('ff6254')" class="circle1" style="background: #ff6254;"></section>
+                            <section onclick="theme1('7054ff')" class="circle1" style="background: #7054ff;"></section>
+                        </section>
+                    </section><br>
+                    <section class="blueclr1 size1 center1">MODE</section>
+                    <section id="modehold">
+                        <section class="flex">
+                            <section onclick="theme2()" class="circle2" style="background: #ebebeb;"></section>
+                            <section onclick="theme3()" class="circle2" style="background: #1f222f;"></section>
+                            <section onclick="theme4()" class="circle2" style="background: #222;"></section>
+                        </section>
+                        <section class="flex">
+                            <section class="circlename">Light</section>
+                            <section class="circlename">Twinlight</section>
+                            <section class="circlename">Dark</section>
+                        </section>
+                    </section>
+                </section>
+                <section class="top40"></section>
+                <section onclick="settingshow2()" class="blueclr1 size2 center1">About this code &gt;</section>
+                <hr><section class="txtclr6 size1">Click outside the nav to close</section>
+            </section>
+            <section onclick="settingexit()" class="sidediv2"></section>
+        </section>
+    </section>
+
+    <script>
+        //define elements
+        var all1 = document.querySelectorAll("*");
+        var codes = document.getElementById("codes");
+        var loader1 = document.getElementById("loader1");
+        var part1 = document.getElementById("part1");
+        var part2 = document.getElementById("part2");
+        var part3 = document.getElementById("part3");
+        var part4 = document.getElementById("part4");
+        var part5 = document.getElementById("part5");
+        var avatar = document.getElementById("avatar");
+        var username = document.getElementById("username");
+        var levell = document.getElementById("levell");
+        var xps = document.getElementById("xps");
+        var bio = document.getElementById("bio");
+        var followers = document.getElementById("followers");
+        var following = document.getElementById("following");
+        var streak = document.getElementById("streak");
+        var streakflex1 = document.getElementById("streakflex1");
+        var codeshold = document.getElementById("codeshold");
+        var topnav = document.getElementById("topnav");
+        var fade1 = document.getElementById("fade1");
+        var fade2 = document.getElementById("fade2");
+        var fade3 = document.getElementById("fade3");
+        var livemsgholder1 = document.getElementById("livemsg");
+        var info1 = document.getElementById("info1");
+        var modethemehold = document.getElementById("modethemehold");
+        var alertmain = document.getElementById("alertmain");
+        var sidediv1 = document.getElementById("sidediv1");
+        var sidediv2 = document.getElementById("sidediv2");
+        var inputformsg = document.getElementById("inputformsg");
+        var chlhold = document.getElementById('chlhold');
+        var loader2 = document.querySelectorAll(".loader2");
+        var viewbtn = document.querySelectorAll(".viewbtn");
+        var drop1 = document.querySelectorAll(".drop1");
+
+        var alert1 = document.getElementById("alert1");
+        var loader1 = document.getElementById("loader1");
+        var discuss = document.getElementById("discuss");
+        var codes = document.getElementById("codes");
+        var profile2 = document.getElementById("profile2");
+        var learn = document.getElementById("learn");
+        var options = document.getElementById("options");
+        var community = document.getElementById("community");
+        var feed = document.getElementById("feed");
+        var notif = document.getElementById("notif");
+        var bottomnav = document.getElementById("bottomnav");
+        var msg = document.getElementById("msg");
+        var chatbot = document.getElementById("chatbot");
+        var swipe1 = document.getElementById("swipe1");
+        var swipe2 = document.getElementById("swipe2");
+
+        var coursehold1 = document.getElementById("coursehold1");
+        var coursehold2 = document.getElementById("coursehold2");
+        var coursehold3 = document.getElementById("coursehold3");
+        var coursehold4 = document.getElementById("coursehold4");
+        var coursehold5 = document.getElementById("coursehold5");
+        var code2 = document.getElementById("code1");
+        var ques1 = document.getElementById("ques");
+        var notifhold1 = document.getElementById("notifhold1");
+        var msghold1 = document.getElementById("msghold1");
+        var feedhold1 = document.getElementById("feedhold1");
+        var feedhold2 = document.getElementById("feedhold2");
+
+        var navcontent1 = '<span onclick="settingshow1()" class="menu1">&#9776;</span><svg fill="#fff" class="msg1" onclick="swipe2show2()"  viewBox="0 -30 200 300" style="enable-background:new 0 0 233.058 233.058;" xml:space="preserve"><g><path d="M116.538,4.05C52.284,4.05,0,45.321,0,96.043c0,28.631,16.729,55.208,45.889,72.911c4.525,2.737,7.635,7.283,8.572,12.478   c2.876,16.045-0.991,32.948-6.758,47.576c19.239-9.134,39.064-23.161,54.8-36.63c3.879-3.314,9.055-4.701,14.087-4.354h0.023   c64.191,0,116.445-41.259,116.445-91.987C233.058,45.321,180.792,4.05,116.538,4.05z"/></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg><svg class="bell1" onclick="swipe2show1()" viewBox="0 0 512 512" fill="#fff"><g><path d="M381.7,225.9c0-97.6-52.5-130.8-101.6-138.2c0-0.5,0.1-1,0.1-1.6c0-12.3-10.9-22.1-24.2-22.1c-13.3,0-23.8,9.8-23.8,22.1   c0,0.6,0,1.1,0.1,1.6c-49.2,7.5-102,40.8-102,138.4c0,113.8-28.3,126-66.3,158h384C410.2,352,381.7,339.7,381.7,225.9z"/><path d="M256.2,448c26.8,0,48.8-19.9,51.7-43H204.5C207.3,428.1,229.4,448,256.2,448z"/></g></svg><section id="topinfo" onclick="swipe2show2()">'+randomNumber1(20,100)+'</section>';
+        var navcontent2 = '<section onclick="settingshow1()" class="menu1 fixedleft">&#9776;</section><section class="tophold"><section onclick="community1()" class="txtclr7 size4 navtxt1">Practice</section><section onclick="feed3()" class="txtclr7 size4 navtxt1">Feed</section></section>';
+        var navcontent3 = '<section onclick="settingshow1()" class="menu1 fixedleft">&#9776;</section><section class="tophold"><section onclick="notification1()" class="txtclr7 size4 navtxt1">Notifs</section><section onclick="message1()" class="txtclr7 size4 navtxt1">Messages</section></section>';
+
+        $('#sidenav').hide();
+
+        document.getElementById("form2").addEventListener("submit", function(event1){
+            event1.preventDefault();
+            searchcode();
+        });
+        document.getElementById("form3").addEventListener("submit", function(event2){
+            event2.preventDefault();
+            searchques();
+        });
+
+        function property1(elem2){
+            for (i=0; i<elem2.length; i++){
+                if (elem2[i].hasAttribute('onclick')){
+                    elem2[i].style.setProperty('cursor', 'pointer');
+                    elem2[i].style.setProperty('-webkit-tap-highlight-color', '#0000');
+                }
+            }
+        }
+
+        function check1(){
+            var span1 = document.querySelectorAll("span");
+            var svg1 = document.querySelectorAll("svg");
+            var img2 = document.querySelectorAll("img");
+            var section1 = document.querySelectorAll("section");
+            var button1 = document.querySelectorAll("button");
+            property1(span1);
+            property1(svg1);
+            property1(img2);
+            property1(section1);
+            property1(button1);
+        }
+
+        function votes1(){
+            var arroww1 = document.querySelectorAll(".arroww1");var arroww2 = document.querySelectorAll(".arroww2");
+            var likess = document.querySelectorAll(".likess");
+            for (let i = 0; i < arroww1.length; i++) {
+                arroww1[i].onclick = function(){
+                    likecount1 = likess[i].innerHTML;
+                    likecountint1 = parseInt(likecount1);
+                    flike1 = likecountint1 + 1;
+                    likess[i].innerHTML = '+' + flike1;
+                }
+                arroww2[i].onclick = function(){
+                    likecount2 = likess[i].innerHTML;
+                    likecountint2 = parseInt(likecount2);
+                    flike2 = likecountint2 - 1;
+                    likess[i].innerHTML = '+' + flike2;
+                }
+            };
+        }
+
+        function chl2(){
+            chlhold.innerHTML = '<button class="btn3">You\'re not eligibile to play challanges</button>';
+        }
+
+        function codelist(){
+            var arr1 = [];
+            var codearr1 = ['', '19107895', '14022015', '3573369', '19394415', '7439484', '16812836', '19480187', '18717961', '18772045', '18653347'];
+            var codearr2 = ['', 'Justin bieber bio', 'Facebook app UI', 'My physics engine', 'ToDo list app', 'Magical words', 'What is AI', 'Check your number', 'Rainy day', 'Color game', 'Customizable particles'];
+            var codearr3 = ['', 'Shruti', 'Divyanshu', 'Prashanth Kumar', 'Queen', 'Dhruva', 'Riddhi', 'Manya', 'Anmol', 'Harsh', 'Anshika'];
+            while(arr1.length < 10){
+                var r1 = Math.floor(Math.random() * 10) + 1;
+                if(arr1.indexOf(r1) === -1) arr1.push(r1);
+            }
+            for (num=0; num<10; num++){
+                code3('code1', codearr1[arr1[num]], codearr2[arr1[num]], codearr3[arr1[num]], randomNumber1(100, 1000));
+            }
+        }
+        function queslist(){
+            var arr2 = [];
+            var quesarr1 = ['', 'What is html?', 'Why it\'s giving error by god', 'Where is my haveli?', 'What is array?', 'Why this Ml is not working?', 'How to fetch data?', 'How to upload image?', 'Why this array have 0 elements?', 'What is the difference?', 'What is image processing?'];
+            var quesarr2 = ['', 'Html', 'ByGod', 'Haveli', 'Array', 'Ml', 'Fetching', 'Image', 'Array', 'Code', 'Image'];
+            var quesarr3 = ['', '18669173', '10107008', '18736943', '17555554', '18109487', '16882555', '14097887', '18088635', '13000293', '7109620'];
+            var quesarr4 = ['', 'Satnam', 'Amit', 'Pari', 'Deepanjali', 'Namit', 'Ayush', 'Assassin', 'Suhana', 'Priyarth', 'SR'];
+            while(arr2.length < 10){
+                var r2 = Math.floor(Math.random() * 10) + 1;
+                if(arr2.indexOf(r2) === -1) arr2.push(r2);
+            }
+            for (num=0; num<10; num++){
+                question1('ques', quesarr1[arr2[num]], quesarr2[arr2[num]], quesarr3[arr2[num]], quesarr4[arr2[num]], randomNumber1(100, 1000));
+            }
+        }
+        function feed1list(){
+            var arr3 = [];
+            var feed1arr1 = ['', '18653347', '19480187', '19107895', '18772045', '18717961', '14022015'];
+            var feed1arr2 = ['', 'Anshika', 'Manya', 'Shruti', 'Harsh', 'Anmol', 'Divyanshu'];
+            var feed1arr3 = ['', 'Post', 'Posted a new answer to the question "How to avoid errors?"', 'Posted a new code "Manjar"', 'Replied to a comment on code "Color game"', 'Posted a new code "Curious Coders"', 'Posted a comment on code "Sololearn"'];
+            var feed1arr4 = ['', '<section class="top40"></section><section class="center1">Thankkkkkkkkkk Youuuuuuuu Sooooooooooooooooo Sooooooooooooooooo Sooooooooooooooooo Much</section><section class="top40"></section>', 'Don\'t write any code!<br>Na rhega code na rhege errors.', 'for i in range(100):<br>print("Manjar icecream nhi kha skte")', 'Thank you', '&lt;html&gt;<br>&lt;head&gt;<br>&lt;style&gt;<br>body {<br>...', 'Awesome Bawa'];
+            while(arr3.length < 6){
+                var r3 = Math.floor(Math.random() * 6) + 1;
+                if(arr3.indexOf(r3) === -1) arr3.push(r3);
+            }
+
+            var arr4 = [];
+            var feed2arr1 = ['', '18736943', '3573369'];
+            var feed2arr2 = ['', 'Pari', 'Prashanth Kumar'];
+            var feed2arr3 = ['', 'Post', 'Post'];
+            var feed2arr4 = ['', 'https://i.ibb.co/rmWTcwH/Meme2.png', 'https://i.ibb.co/PckzPbw/Meme1.png'];
+            while(arr4.length < 2){
+                var r4 = Math.floor(Math.random() * 2) + 1;
+                if(arr4.indexOf(r4) === -1) arr4.push(r4);
+            }
+            num3 = 2;
+            for (num=0; num<2; num++){
+                feed1('feedhold1', feed1arr1[arr3[num]], feed1arr2[arr3[num]], feed1arr3[arr3[num]], feed1arr4[arr3[num]]);
+                for (i=0; i<2; i++){
+                    feed1('feedhold1', feed1arr1[arr3[num3]], feed1arr2[arr3[num3]], feed1arr3[arr3[num3]], feed1arr4[arr3[num3]]);
+                    num3 += 1;
+                }
+                feed2('feedhold1', feed2arr1[arr4[num]], feed2arr2[arr4[num]], feed2arr3[arr4[num]], feed2arr4[arr4[num]]);
+            }
+            num3 = 3;
+        }
+        function notiflist(){
+            var arr5 = [];
+            var notifarr1 = ['', '20278522', '19107895', '14574715', '14022015', '18109487', '16882555', '3573369', '14097887', '19801748', '19394415', '7439484', '16812836', '17555554', '13000293'];
+            var notifarr2 = ['', 'Shreyash', 'Shruti', 'Jay', 'Divyanshu', 'Namit', 'Ayush', 'Prashanth Kumar', 'Assassin', 'Sowmya', 'Queen', 'Dhruva', 'Riddhi', 'Deepanjali', 'Priyarth'];
+            var notifarr3 = ['', 'liked your comment on "Gm"', 'mentioned you in comment for code "Fruity"', 'challanged you in Html', 'mentioned you in comment for the post "Meow"', 'Liked your code "Instagram"', 'started following you', 'helped you for API', 'liked your comment on code "Variables in Html"', 'started following you', 'challanged you in Js', 'liked your comment on post "So today is..."', 'replied to your comment on the code "Ai"', 'posted a comment on your code "Quora"', 'started following you'];
+            while(arr5.length < 14){
+                var r5 = Math.floor(Math.random() * 14) + 1;
+                if(arr5.indexOf(r5) === -1) arr5.push(r5);
+            }
+            for (num=0; num<14; num++){
+                notif1('notifhold1', notifarr1[arr5[num]], notifarr2[arr5[num]], notifarr3[arr5[num]]);
+            }
+        }
+        function msglist(){
+            var arr6 = [];
+            var msgarr1 = ['', '18736943', '18772045', '18717961', '9151475', '7109620', '10107008', '18088635', '19181491', '19480187', '14808477', '18044537', '18653347', '18669173'];
+            var msgarr2 = ['', 'Pari', 'Harsh', 'Anmol', 'Amardeep Kesharwani', 'SR', 'Amit', 'Suhana', 'Sakshi', 'Manya', 'Raghav', 'Vamshi', 'Anshika', 'Satnam'];
+            var msgarr3 = ['', 'Meri haveli me...', 'Bro ye code...', 'Haa', 'You: Vaise...', 'You: Hehe', 'By god', 'You: xD', 'Gift?', 'You: Chocolate...', 'You: Accha', 'Okay', 'You: Princess Sista...', 'You: Bawa ye clone...'];
+            while(arr6.length < 13){
+                var r6 = Math.floor(Math.random() * 13) + 1;
+                if(arr6.indexOf(r6) === -1) arr6.push(r6);
+            }
+            for (num=0; num<13; num++){
+                msg3('msghold1', msgarr1[arr6[num]], msgarr2[arr6[num]], msgarr3[arr6[num]]);
+            }
+        }
+
+        function learn1(){
+            document.querySelectorAll(".high1")[0].style.setProperty('fill', 'var(--blue1)');
+            document.querySelectorAll(".high2")[0].style.setProperty('color', 'var(--blue1)');
+            document.querySelectorAll(".high1")[1].style.setProperty('fill', 'var(--dark1)');
+            document.querySelectorAll(".high2")[1].style.setProperty('color', 'var(--dark1)');
+            document.querySelectorAll(".high1")[2].style.setProperty('fill', 'var(--dark1)');
+            document.querySelectorAll(".high2")[2].style.setProperty('color', 'var(--dark1)');
+            document.querySelectorAll(".high1")[3].style.setProperty('fill', 'var(--dark1)');
+            document.querySelectorAll(".high2")[3].style.setProperty('color', 'var(--dark1)');
+            document.querySelectorAll(".high2")[4].style.setProperty('color', 'var(--dark1)');
+            coursehold1.innerHTML = "";
+            coursehold2.innerHTML = "";
+            coursehold3.innerHTML = "";
+            topnav.style.background = "var(--blue1)";
+            $('#discuss').hide();
+            $('#codes').hide();
+            $('#profile2').hide();
+            $('#options').hide();
+            $('#swipe1').hide();
+            $('#swipe2').hide();
+            topnav.innerHTML = navcontent1;
+            for (s=0; s<2; s++){
+            course1('coursehold1', 'https://i.ibb.co/hL8tQ6S/Py-1.jpg', 'fullbor');
+            course1('coursehold1', 'https://i.ibb.co/GnWRVpf/Ai-1.jpg', 'halfbor');
+            course1('coursehold1', 'https://i.ibb.co/5RcfR4v/Data-1.jpg', 'partbor');
+            course1('coursehold1', 'https://i.ibb.co/sVmBFhm/Ml-1.jpg', 'fullbor');
+            course1('coursehold2', 'https://i.ibb.co/zsprfj4/Html-1.jpg', 'halfbor');
+            course1('coursehold2', 'https://i.ibb.co/qnwhkR5/Css-1.png', 'halfbor');
+            course1('coursehold2', 'https://i.ibb.co/fX6hM3V/Js-1.png', 'fullbor');
+            }
+            course1('coursehold3', 'https://i.ibb.co/Qpb5s8Y/React-1.png', 'partbor');
+            course1('coursehold3', 'https://i.ibb.co/ydLLzks/Redux-1.png', 'halfbor');
+            course1('coursehold3', 'https://i.ibb.co/hdLL2Jf/C-1.png', 'fullbor');
+            course1('coursehold3', 'https://i.ibb.co/LC81y6d/Cpp-1.png', 'fullbor');
+            course1('coursehold3', 'https://i.ibb.co/ZLqJQ1x/Cs-1.png', 'halfbor');
+            course1('coursehold3', 'https://i.ibb.co/hL8tQ6S/Py-1.jpg', 'partbor');
+            course1('coursehold3', 'https://i.ibb.co/VMVZSS5/Java-1.png', 'partbor');
+            course1('coursehold3', 'https://i.ibb.co/fX6hM3V/Js-1.png', 'fullbor');
+            coursehold4.innerHTML = "";
+            coursehold5.innerHTML = "";
+            notifhold1.innerHTML = "";
+            msghold1.innerHTML = "";
+            feedhold1.innerHTML = "";
+            window.removeEventListener('scroll', loadanim);
+            window.removeEventListener('scroll', topnav1);
+            $('#learn').show();
+            $('#bottomnav').show();
+            check1();
+            window.scrollTo(0,0);
+        }
+
+        function swipe1show(){
+            document.querySelectorAll(".high1")[0].style.setProperty('fill', 'var(--dark1)');
+            document.querySelectorAll(".high2")[0].style.setProperty('color', 'var(--dark1)');
+            document.querySelectorAll(".high1")[1].style.setProperty('fill', 'var(--blue1)');
+            document.querySelectorAll(".high2")[1].style.setProperty('color', 'var(--blue1)');
+            document.querySelectorAll(".high1")[2].style.setProperty('fill', 'var(--dark1)');
+            document.querySelectorAll(".high2")[2].style.setProperty('color', 'var(--dark1)');
+            document.querySelectorAll(".high1")[3].style.setProperty('fill', 'var(--dark1)');
+            document.querySelectorAll(".high2")[3].style.setProperty('color', 'var(--dark1)');
+            document.querySelectorAll(".high2")[4].style.setProperty('color', 'var(--dark1)');
+            coursehold4.innerHTML = "";
+            coursehold5.innerHTML = "";
+            feedhold1.innerHTML = '';
+            topnav.style.background = "var(--blue1)";
+            $('#discuss').hide();
+            $('#codes').hide();
+            $('#learn').hide();
+            $('#profile2').hide();
+            $('#options').hide();
+            $('#swipe2').hide();
+            topnav.innerHTML = navcontent2;
+            for (t=0; t<2; t++){
+            coach1('coursehold4', 'https://i.ibb.co/0nCd08G/Fruit-1.jpg');
+            coach1('coursehold4', 'https://i.ibb.co/SRdTQD5/Secret-password-1.png');
+            coach1('coursehold4', 'https://i.ibb.co/qJ8gmML/Security-1.jpg');
+            course1('coursehold5', 'https://i.ibb.co/3YcWNzp/Kotlin-1.jpg', 'halfbor');
+            course1('coursehold5', 'https://i.ibb.co/421WbTW/Data-structures-1.jpg', 'fullbor');
+            course1('coursehold5', 'https://i.ibb.co/5RcfR4v/Data-1.jpg', 'partbor');
+            }
+            feed1list();
+            votes1();
+            coursehold1.innerHTML = "";
+            coursehold2.innerHTML = "";
+            coursehold3.innerHTML = "";
+            notifhold1.innerHTML = "";
+            msghold1.innerHTML = "";
+            window.removeEventListener('scroll', loadanim);
+            window.removeEventListener('scroll', topnav1);
+            swipe1.addEventListener('touchstart', handleTouchStart1, false);
+            swipe1.addEventListener('touchmove', handleTouchMove1, false);
+            $('#swipe1').fadeIn();
+            $('#bottomnav').show();
+            check1();
+            window.scrollTo(0,0);
+        }
+
+        function community1(){
+            if (window.innerWidth > 560){
+                document.querySelectorAll(".swipewrap")[0].style.setProperty('margin', '0 0 0 0vw');
+            } else {
+                document.querySelectorAll(".navtxt1")[0].style.setProperty('border-bottom', '3px solid #fff');
+                document.querySelectorAll(".navtxt1")[1].style.setProperty('border-bottom', '3px solid #0000');
+                document.querySelectorAll(".swipewrap")[0].style.setProperty('margin', '0 0 0 0vw');
+            }
+        }
+
+        function feed3(){
+            if (window.innerWidth > 560){
+                document.querySelectorAll(".swipewrap")[0].style.setProperty('margin', '0 0 0 0vw');
+            } else {
+                document.querySelectorAll(".navtxt1")[1].style.setProperty('border-bottom', '3px solid #fff');
+                document.querySelectorAll(".navtxt1")[0].style.setProperty('border-bottom', '3px solid #0000');
+                document.querySelectorAll(".swipewrap")[0].style.setProperty('margin', '0 0 0 -100vw');
+            }
+        }
+
+        function swipe1show1(){
+            swipe1show();
+            community1();
+        }
+
+        function swipe1show2(){
+            swipe1show();
+            feed3();
+        }
+
+        function codes1(){
+            document.querySelectorAll(".high1")[0].style.setProperty('fill', 'var(--dark1)');
+            document.querySelectorAll(".high2")[0].style.setProperty('color', 'var(--dark1)');
+            document.querySelectorAll(".high1")[1].style.setProperty('fill', 'var(--dark1)');
+            document.querySelectorAll(".high2")[1].style.setProperty('color', 'var(--dark1)');
+            document.querySelectorAll(".high1")[2].style.setProperty('fill', 'var(--blue1)');
+            document.querySelectorAll(".high2")[2].style.setProperty('color', 'var(--blue1)');
+            document.querySelectorAll(".high1")[3].style.setProperty('fill', 'var(--dark1)');
+            document.querySelectorAll(".high2")[3].style.setProperty('color', 'var(--dark1)');
+            document.querySelectorAll(".high2")[4].style.setProperty('color', 'var(--dark1)');
+            topnav.style.background = "var(--blue1)";
+            $('#discuss').hide();
+            $('#learn').hide();
+            $('#profile2').hide();
+            $('#options').hide();
+            $('#swipe1').hide();
+            $('#swipe2').hide();
+            topnav.innerHTML = navcontent1;
+            window.addEventListener('scroll', loadanim);
+            window.removeEventListener('scroll', topnav1);
+            coursehold1.innerHTML = "";
+            coursehold2.innerHTML = "";
+            coursehold3.innerHTML = "";
+            coursehold4.innerHTML = "";
+            coursehold5.innerHTML = "";
+            notifhold1.innerHTML = "";
+            msghold1.innerHTML = "";
+            feedhold1.innerHTML = "";
+            $('#codes').show();
+            $('#bottomnav').show();
+            check1();
+            showcode1('Hot today', '');
+            window.scrollTo(0,0);
+        }
+
+        function discuss1(){
+            document.querySelectorAll(".high1")[0].style.setProperty('fill', 'var(--dark1)');
+            document.querySelectorAll(".high2")[0].style.setProperty('color', 'var(--dark1)');
+            document.querySelectorAll(".high1")[1].style.setProperty('fill', 'var(--dark1)');
+            document.querySelectorAll(".high2")[1].style.setProperty('color', 'var(--dark1)');
+            document.querySelectorAll(".high1")[2].style.setProperty('fill', 'var(--dark1)');
+            document.querySelectorAll(".high2")[2].style.setProperty('color', 'var(--dark1)');
+            document.querySelectorAll(".high1")[3].style.setProperty('fill', 'var(--blue1)');
+            document.querySelectorAll(".high2")[3].style.setProperty('color', 'var(--blue1)');
+            document.querySelectorAll(".high2")[4].style.setProperty('color', 'var(--dark1)');
+            topnav.style.background = "var(--blue1)";
+            $('#codes').hide();
+            $('#learn').hide();
+            $('#profile2').hide();
+            $('#options').hide();
+            $('#swipe1').hide();
+            $('#swipe2').hide();
+            topnav.innerHTML = navcontent1;
+            window.addEventListener('scroll', loadanim);
+            window.removeEventListener('scroll', topnav1);
+            coursehold1.innerHTML = "";
+            coursehold2.innerHTML = "";
+            coursehold3.innerHTML = "";
+            coursehold4.innerHTML = "";
+            coursehold5.innerHTML = "";
+            notifhold1.innerHTML = "";
+            msghold1.innerHTML = "";
+            feedhold1.innerHTML = "";
+            $('#discuss').show();
+            $('#bottomnav').show();
+            check1();
+            showques1('Trending', '');
+            window.scrollTo(0,0);
+        }
+
+        function profile1(iid){
+            document.querySelectorAll(".high1")[0].style.setProperty('fill', 'var(--dark1)');
+            document.querySelectorAll(".high2")[0].style.setProperty('color', 'var(--dark1)');
+            document.querySelectorAll(".high1")[1].style.setProperty('fill', 'var(--dark1)');
+            document.querySelectorAll(".high2")[1].style.setProperty('color', 'var(--dark1)');
+            document.querySelectorAll(".high1")[2].style.setProperty('fill', 'var(--dark1)');
+            document.querySelectorAll(".high2")[2].style.setProperty('color', 'var(--dark1)');
+            document.querySelectorAll(".high1")[3].style.setProperty('fill', 'var(--dark1)');
+            document.querySelectorAll(".high2")[3].style.setProperty('color', 'var(--dark1)');
+            document.querySelectorAll(".high2")[4].style.setProperty('color', 'var(--blue1)');
+            $('#discuss').hide();
+            $('#codes').hide();
+            $('#learn').hide();
+            $('#options').hide();
+            $('#swipe1').hide();
+            $('#swipe2').hide();
+            $('#chatbot').hide();
+            topnav.innerHTML = navcontent1;
+            data(iid);
+            coursehold1.innerHTML = "";
+            coursehold2.innerHTML = "";
+            coursehold3.innerHTML = "";
+            coursehold4.innerHTML = "";
+            coursehold5.innerHTML = "";
+            notifhold1.innerHTML = "";
+            msghold1.innerHTML = "";
+            feedhold1.innerHTML = "";
+            window.removeEventListener('scroll', loadanim);
+            window.addEventListener('scroll', topnav1);
+            $('#profile2').fadeIn();
+            $('#bottomnav').show();
+            check1();
+            window.scrollTo(0,0);
+        }
+
+        function swipe2show(){
+            notifhold1.innerHTML = "";
+            msghold1.innerHTML = "";
+            topnav.style.background = "var(--blue1)";
+            $('#discuss').hide();
+            $('#codes').hide();
+            $('#learn').hide();
+            $('#profile2').hide();
+            $('#options').hide();
+            $('#swipe1').hide();
+            $('#chatbot').hide();
+            notiflist()
+            msglist()
+            topnav.innerHTML = navcontent3;
+            window.removeEventListener('scroll', loadanim);
+            window.removeEventListener('scroll', topnav1);
+            swipe2.addEventListener('touchstart', handleTouchStart1, false);
+            swipe2.addEventListener('touchmove', handleTouchMove2, false);
+            coursehold1.innerHTML = "";
+            coursehold2.innerHTML = "";
+            coursehold3.innerHTML = "";
+            coursehold4.innerHTML = "";
+            coursehold5.innerHTML = "";
+            feedhold1.innerHTML = "";
+            $('#swipe2').fadeIn();
+            $('#bottomnav').show();
+            check1();
+            window.scrollTo(0,0);
+        }
+
+        function notification1(){
+            if (window.innerWidth > 560){
+                document.querySelectorAll(".swipewrap")[1].style.setProperty('margin', '0 0 0 0vw');
+            } else {
+                document.querySelectorAll(".navtxt1")[0].style.setProperty('border-bottom', '3px solid #fff');
+                document.querySelectorAll(".navtxt1")[1].style.setProperty('border-bottom', '3px solid #0000');
+                document.querySelectorAll(".swipewrap")[1].style.setProperty('margin', '0 0 0 0vw');
+            }
+        }
+
+        function message1(){
+            if (window.innerWidth > 560){
+                document.querySelectorAll(".swipewrap")[1].style.setProperty('margin', '0 0 0 0vw');
+            } else {
+                document.querySelectorAll(".navtxt1")[1].style.setProperty('border-bottom', '3px solid #fff');
+                document.querySelectorAll(".navtxt1")[0].style.setProperty('border-bottom', '3px solid #0000');
+                document.querySelectorAll(".swipewrap")[1].style.setProperty('margin', '0 0 0 -100vw');
+            }
+        }
+
+        function swipe2show1(){
+            swipe2show();
+            notification1();
+        }
+
+        function swipe2show2(){
+            swipe2show();
+            message1();
+        }
+
+        function chatbot2(id1, user){
+            livemsgholder1.innerHTML = '';
+            inputformsg.value = '';
+            topnav.style.background = "var(--blue1)";
+            $('#swipe2').hide();
+            topnav.innerHTML = '<section class="flex"><svg onclick="swipe2show2()" id="backsvg" viewBox="0 0 24 24"><path fill="var(--white4)" d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg><br><img class="avatar1" onclick="profile1(\''+user+'\')" src="https://api.sololearn.com/Uploads/Avatars/'+id1+'.jpg" onerror=this.src="https://i.ibb.co/PY8P0Cd/sololearn1-1.webp"><br><span onclick="profile1(\''+user+'\')" class="size3 txtclr8">'+user+'</span></section>';
+            window.removeEventListener('scroll', loadanim);
+            window.removeEventListener('scroll', topnav1);
+            coursehold1.innerHTML = "";
+            coursehold2.innerHTML = "";
+            coursehold3.innerHTML = "";
+            coursehold4.innerHTML = "";
+            coursehold5.innerHTML = "";
+            msghold1.innerHTML = "";
+            notifhold1.innerHTML = "";
+            feedhold1.innerHTML = "";
+            $('#chatbot').fadeIn();
+            $('#bottomnav').hide();
+            check1();
+            inputformsg.focus();
+        }
+
+        function settingexit(){
+            topnav.style.transition = '0s background';
+            $('#sidenav').fadeOut();
+            $('#sidediv2').fadeOut();
+            sidediv1.style.margin = '0 0 0 -300px';
+        }
+
+        function settingshow1(){
+            topnav.style.transition = '.4s background';
+            $('#sidenav').show();
+            $('#sidediv2').fadeIn();
+            sidediv1.style.margin = '0';
+        }
+
+        function settingshow2(){
+            notifhold1.innerHTML = "";
+            topnav.style.background = "var(--blue1)";
+            $('#discuss').hide();
+            $('#codes').hide();
+            $('#learn').hide();
+            $('#profile2').hide();
+            $('#swipe1').hide();
+            $('#swipe2').hide();
+            notif1('notifhold1', '1', 'Krishna', 'Posted a comment');
+            topnav.innerHTML = navcontent1;
+            window.addEventListener('scroll', loadanim);
+            window.removeEventListener('scroll', topnav1);
+            coursehold1.innerHTML = "";
+            coursehold2.innerHTML = "";
+            coursehold3.innerHTML = "";
+            coursehold4.innerHTML = "";
+            coursehold5.innerHTML = "";
+            feedhold1.innerHTML = "";
+            $('#options').show();
+            $('#bottomnav').hide();
+            $('#sidenav').fadeOut();
+            $('#sidediv2').fadeOut();
+            sidediv1.style.margin = '0 0 0 -300px';
+            check1();
+            window.scrollTo(0,0);
+        }
+
+        //define function for load animation
+        function loadanim(){
+            for (i=0; i<loader2.length; i++){
+                let elem1 = loader2[i];
+                let position = elem1.getBoundingClientRect();
+            }
+        }
+        //define a funtion for topnav
+        function topnav1(){
+            let ele1 = part1.offsetHeight - 60;
+            let wind = window.pageYOffset + 10;
+            let opac = 1000-wind*4;
+            let marg = wind/6;
+            if (wind > ele1) {
+                topnav.style.background = "var(--blue1)";
+            } else {
+                topnav.style.background = "#0000";
+                part1.style.margin = "0 0 "+marg+"px 0";
+                fade1.style.marginLeft = wind+"px";
+                fade1.style.opacity = opac/1000;
+            }
+        }
+        //define function for time
+        function gettime(){
+            try {
+                let date = new Date();
+                let hh = date.getHours();
+                let mm = date.getMinutes();
+                hh = (hh < 10) ? "0" + hh : hh;
+                mm = (mm < 10) ? "0" + mm : mm;
+                let timee = "It\'s " +hh+ ":" +mm+ " now";
+                return timee;
+            } catch(err){return 'I don\'t know';}
+        }
+        //function for battery
+        function getbatt(){
+            try {
+                navigator.getBattery().then(function(battery) {
+                    battlevel = "Your battery level is " + (battery.level * 100).toFixed() + "%";
+                });
+                return battlevel;
+            } catch (err){
+                return 'I don\'t know';
+            }
+        }
+        //define function for memes
+        function showmeme(){
+            memelink = ['https://i.ibb.co/qF96dBv/Meme4.jpg', 'https://i.ibb.co/SrHw7K6/Meme3.jpg', 'https://i.ibb.co/fS86cv0/Meme1.png', 'https://i.ibb.co/xmK6NJG/Meme2.png']
+            function checklink(){
+                memeimg = document.querySelectorAll('.memeimg');
+                if (memeimg.length == memelink.length){
+                    finalmeme = 'No'
+                } else {
+                    memeno = randomNumber1(0,4);
+                    finalmeme = memelink[memeno];
+                    for (i=0; i<memeimg.length; i++){
+                        if (memeimg[i].src == finalmeme){checklink()} else {}
+                    }
+                }
+            }
+            checklink();
+            if (finalmeme == 'No'){
+                imgg = 'No memes available';
+            } else {
+                imgg = '<img class="memeimg" src="'+finalmeme+'" onload=this.style.height="auto" onerror=this.src="https://i.ibb.co/K5kTHpD/Noimg.png">';
+            }
+            return imgg;
+        }
+        //define function for msgs
+        var num1 = 100;
+        var num2 = 1000;
+        function submitmsg(){
+            msg10 = ['Hello', 'Converting oxygen to carbon dioxide', 'Chatting with you', 'Fine', 'Just like you!', 'Just like any human being!', 'I\'m mad', 'What do you think?', 'Alien!!', gettime(), 'Javascript', 'Python', 'Java', 'Html', 'Mujhe to kuch kaam nhi h', 'Oxygen ko carbon dioxide me convert kr rha hu', 'Kuch nhi', 'Mujhe nhi pta', 'I don\'t know', 'What do you think?', 'Shut up', 'Nooo', 'Tum ho!', 'Nhii', 'Lol', 'Really?', getbatt(), 'This code is created by Krishna Therokar', 'Btw, what\'s your name?', 'Hehe', 'No', 'Yes', 'What you\'re doing?', 'I don\'t know', 'Can you hack NASA with CSS?', 'Bye', 'What you\'re saying?', 'Nothing much tbh', 'Lol', 'Yeah so', 'You are awesome', 'NiCE to meet you', showmeme()];
+            suggestions.scrollTo(num1, 0);
+            num1 += 100;
+            inputformsg.focus();
+            msg1 = inputformsg.value;
+            livemsgholder1.innerHTML += '<section class="innermsghold1"><section class="whitespace1"></section><section class="innermsg1">'+msg1+'</section></section>';
+            inputformsg.value = "";
+            window.scrollTo(0, num2);
+            num2 += 1000;
+            msg = msg1.toLowerCase();
+            if (msg == 'hello' || msg == 'hi' || msg == 'hlo' || msg == 'hey' || msg == 'hii'){msgno = 0}
+            else if (msg.includes('what') && (msg.includes('you') || msg.includes('u')) && msg.includes('doing')){msgno = randomNumber1(1,3)}
+            else if (msg.includes('how') && (msg.includes('are') || msg.includes('r')) && (msg.includes('you') || msg.includes('u'))){msgno = randomNumber1(3,6)}
+            else if (msg.includes('who') && (msg.includes('are') || msg.includes('r')) && (msg.includes('you') || msg.includes('u'))){msgno = randomNumber1(6, 9)}
+            else if (msg.includes('what') && msg.includes('time') && msg.includes('now')){msgno = 9}
+            else if (msg.includes('what') && (msg.includes('you') || msg.includes('u')) && msg.includes('learning')){msgno = randomNumber1(10,14)}
+            else if ((msg.includes('you') || msg.includes('u')) && (msg.includes('mad') || msg.includes('stupid'))){msgno = randomNumber1(20,22)}
+            else if (msg.includes('what') && msg.includes('battery')){msgno = 26}
+            else if (msg.includes('who') && (msg.includes('creator') || msg.includes('created')) && msg.includes('code')){msgno = 27}
+            else if (msg.includes('show') && msg.includes('meme')){msgno = 42}
+            else if (msg.includes('what') || msg.includes('why') || msg.includes('how')){msgno = randomNumber1(18,20)}
+            else if ((msg.includes('kya') || msg.includes('ky')) && (msg.includes('kr') || msg.includes('kar') || msg.includes('chl') || msg.includes('chal'))){msgno = randomNumber1(14,16)}
+            else if ((msg.includes('tum') || msg.includes('tu')) && (msg.includes('pagal') || msg.includes('pgl') || msg.includes('mad'))){msgno = randomNumber1(22,24)}
+            else if (msg.includes('kya') || msg.includes('kaise') || msg.includes('kyu')){msgno = randomNumber1(16,18)}
+            else {msgno = randomNumber1(28,42)}
+            msg2 = msg10[msgno];
+            setTimeout(() => {
+                livemsgholder1.innerHTML += '<section class="innermsghold1"><section class="innermsg2"><section class="dothold"><span class="dott dot1"></span><span class="dott dot2"></span><span class="dott dot3"></span></section></section><section class="whitespace1"></section></section>';
+                window.scrollTo(0, num2);
+            }, 400);
+            setTimeout(function(){
+                var innermsg = document.querySelectorAll(".innermsghold1");
+                inner1 = innermsg[innermsg.length-1].innerHTML;
+                if (inner1.includes('innermsg1')){
+                    innermsg[innermsg.length-2].innerHTML = '<section class="innermsg2">'+msg2+'</section><section class="whitespace1"></section>';
+                } else {
+                    innermsg[innermsg.length-1].innerHTML = '<section class="innermsg2">'+msg2+'</section><section class="whitespace1"></section>';
+                }
+                window.scrollTo(0, num2);
+                num2 += 1000;
+            }, 1400);
+        }
+        $("#form1").submit(function(e){
+            e.preventDefault();
+            submitmsg();
+        })
+
+        //define function for input value
+        function setvalue(valuee){
+            inputformsg.value = valuee;
+            submitmsg();
+        }
+        sugest('suggestions', '120', 'What r u doing?');
+        sugest('suggestions', '130', 'Show me a meme');
+        sugest('suggestions', '80', 'How r u?');
+        sugest('suggestions', '150', 'What time is it now?');
+        sugest('suggestions', '140', 'What r u learning?');
+        sugest('suggestions', '170', 'Whats my battery level?');
+        sugest('suggestions', '100', 'Kya chl rha?');
+        function theme1(codee){
+            for (i=0; i<all1.length; i++){
+                all1[i].style.setProperty('--blue1', '#'+codee);
+            }
+        }
+        function theme2(){
+            for (i=0; i<all1.length; i++){
+                all1[i].style.setProperty('--dark1', '#202020');
+                all1[i].style.setProperty('--dark2', '#404040');
+                all1[i].style.setProperty('--dark3', '#606060');
+                all1[i].style.setProperty('--dark4', '#808080');
+                all1[i].style.setProperty('--white1', '#ffffff');
+                all1[i].style.setProperty('--white2', '#f3f3f3');
+                all1[i].style.setProperty('--white3', '#cacaca');
+                all1[i].style.setProperty('--back2', '#bdbdbd40');
+            }
+        }
+        function theme3(){
+            for (i=0; i<all1.length; i++){
+                all1[i].style.setProperty('--dark1', '#f3f3f3');
+                all1[i].style.setProperty('--dark2', '#eeeeee');
+                all1[i].style.setProperty('--dark3', '#d8d8d8');
+                all1[i].style.setProperty('--dark4', '#c6c6c6');
+                all1[i].style.setProperty('--white1', '#292c39');
+                all1[i].style.setProperty('--white2', '#1f222f');
+                all1[i].style.setProperty('--white3', '#707070');
+                all1[i].style.setProperty('--back2', '#40404040');
+            }
+        }
+        function theme4(){
+            for (i=0; i<all1.length; i++){
+                all1[i].style.setProperty('--dark1', '#f3f3f3');
+                all1[i].style.setProperty('--dark2', '#eeeeee');
+                all1[i].style.setProperty('--dark3', '#d8d8d8');
+                all1[i].style.setProperty('--dark4', '#c6c6c6');
+                all1[i].style.setProperty('--white1', '#343434');
+                all1[i].style.setProperty('--white2', '#282828');
+                all1[i].style.setProperty('--white3', '#707070');
+                all1[i].style.setProperty('--back2', '#40404040');
+            }
+        }        
+    
+    function showcode1(sorting1, search1){
+        code2.innerHTML= '';
+        $('.drophold').hide();
+        loader2[1].style.display = 'block';
+        drop1[1].innerHTML = sorting1;
+        setTimeout(() => {
+            codelist();
+            loader2[1].style.display = 'none';
+            if (search1!=''){
+                code2.innerHTML= '<section class="card3 center1">An error occured<br>Server might be down or document structure might have been changed.</section><br>';
+            }
+        }, 1000);
+    }
+
+    function showques1(sorting1, search1){
+        ques1.innerHTML= '';
+        $('.drophold').hide();
+        loader2[0].style.display = 'block';
+        drop1[0].innerHTML = sorting1;
+        setTimeout(() => {
+            queslist();
+            loader2[0].style.display = 'none';
+            if (search1!=''){
+                ques1.innerHTML= '<section class="card3 center1">An error occured<br>Server might be down or document structure might have been changed.</section><br>';
+            }
+        }, 1000);
+    }
+
+    function searchcode(){
+        msg2 = document.getElementById('input2').value;
+        val2 = drop1[1].innerHTML;
+        showcode1(val2, msg2);
+    }
+
+    function searchques(){
+        msg2 = document.getElementById('input3').value;
+        val2 = drop1[0].innerHTML;
+        showques1(val2, msg2);
+    }
+    
+    function dropshow(){
+        document.getElementById('input2').value = '';
+        document.getElementById('input3').value = '';
+        $('.drophold').show();
+    }
+        function alert2(){
+            $('#btn1').hide();
+            $('#cross1').hide();
+            alertmain.style.margin = '16vh auto 10px auto';
+            topnav.style.display = 'block';
+            $('#mainn').fadeIn();
+            info1.innerHTML = '<section id="cross2" onclick="alert3()" class="right size5">&#10005;</section>'+modethemehold.innerHTML+'<button onclick="alert3()" class="btn1" id="btn2">Next</button><hr><span class="size1 txtclr5">You can always change it in Settings</span>';
+            topnav.style.transition = '.4s background';
+            check1();
+        }
+        function alert3(){
+            topnav.style.transition = '0s background';
+            $('#alert1').fadeOut();
+        }
+        function scroll1(num1){
+            var coursey = document.getElementById('coursehold'+num1);
+            coursein = coursey.innerHTML;
+            coursey.innerHTML = '';
+            coursey.innerHTML = coursein + coursein;
+            coursey.scrollTo(2000, 0);
+            viewbtn[num1-1].style.display = 'none';
+            setTimeout(() => {
+                coursey.innerHTML = coursein;
+                viewbtn[num1-1].style.display = 'block';
+            }, 1000);
+        }
+        function feed4(){
+            try {
+                var username1 = document.getElementById('username').innerHTML;
+                var id4 = document.getElementById('avatar').getAttribute("class");
+                window.scrollTo(0,part1.offsetHeight-40);
+                part2.style.display = 'none';
+                part3.style.display = 'none';
+                part4.style.display = 'none';
+                $('#part5').fadeIn();
+                $('#feedhold2').fadeIn();
+                var arr7 = [];
+                var feed3arr1 = ['', 'Posted a comment on code "Instagram"', 'Posted a new answer to question "How to calculate stars in sky"', 'Posted a new code "How to use search bar"'];
+                var feed3arr2 = ['', 'Awesome!', 'You need to have advanced Html knowledge for counting stars in the sky...', '&lt;html&gt;<br>&lt;head&gt;<br>&lt;style&gt;<br>body {<br>...'];
+                while(arr7.length < 3){
+                    var r7 = Math.floor(Math.random() * 3) + 1;
+                    if(arr7.indexOf(r7) === -1) arr7.push(r7);
+                }
+                var arr8 = [];
+                var feed4arr1 = ['', 'Post', 'Post', 'Post'];
+                var feed4arr2 = ['', 'https://i.ibb.co/qF96dBv/Meme4.jpg', 'https://i.ibb.co/SrHw7K6/Meme3.jpg', 'https://i.ibb.co/fS86cv0/Meme1.png', 'https://i.ibb.co/xmK6NJG/Meme2.png'];
+                while(arr8.length < 1){
+                    var r8 = Math.floor(Math.random() * 3) + 1;
+                    if(arr8.indexOf(r8) === -1) arr8.push(r8);
+                }
+                num4 = 1;
+                for (num=0; num<1; num++){
+                    feed1('feedhold2', id4, username1, feed3arr1[arr7[num]], feed3arr2[arr7[num]]);
+                    feed2('feedhold2', id4, username1, feed4arr1[arr8[num]], feed4arr2[arr8[num]]);
+                    for (i=0; i<2; i++){
+                        feed1('feedhold2', id4, username1, feed3arr1[arr7[num4]], feed3arr2[arr7[num4]]);
+                        num4 += 1;
+                    }
+                }
+                num4 = 3;
+                votes1();
+                check1();
+            } catch(err){
+                part4.innerHTML = '<section class="center1">Data unavailable<br>Please ReRun the code</section>';
+            }
+        }
+        check1();
+        
+        var xDown = null, yDown = null;
+        function getTouches(evt) {
+            return evt.touches  ||  evt.originalEvent.touches;
+        }
+        
+        function handleTouchStart1(evt) {
+            const firstTouch = getTouches(evt)[0];
+            xDown = firstTouch.clientX;
+            yDown = firstTouch.clientY;
+        };
+        
+        function handleTouchMove1(evt){
+            if (!xDown || !yDown){return}
+            var xUp = evt.touches[0].clientX;
+            var yUp = evt.touches[0].clientY;
+            var xDiff = xDown - xUp;
+            var yDiff = yDown - yUp;
+            if ( Math.abs(xDiff) > Math.abs(yDiff)){
+                if ( xDiff > 0 ) {
+                    feed3();
+                } else if ( xDiff < 0 ) {
+                    community1();
+                }
+            }
+            xDown = null; yDown = null;
+        };
+        
+        function handleTouchMove2(evt){
+            if (!xDown || !yDown){return}
+            var xUp = evt.touches[0].clientX;
+            var yUp = evt.touches[0].clientY;
+            var xDiff = xDown - xUp;
+            var yDiff = yDown - yUp;
+            if ( Math.abs(xDiff) > Math.abs(yDiff)){
+                if ( xDiff > 0 ) {
+                    message1();
+                } else if ( xDiff < 0 ) {
+                    notification1();
+                }
+            }
+            xDown = null; yDown = null;
+        };
+
+        msg11 = ['Hello', 'Converting oxygen to carbon dioxide', 'Inactive', 'Welcome to my Profile', 'Learning', 'Thanks for visiting', 'Just like any human being!', 'Mad af', 'What are you thinking?', 'Alien!!']
+
+        async function data(userid){
+            codeshold.innerHTML = '';
+            feedhold2.innerHTML = '';
+            feedhold2.style.display = 'none';
+            loader1.style.display = "block";
+            part5.style.display = 'none';
+            feedhold2.style.display = 'none';
+            $('.drophold').hide();
+            $('#part2').fadeIn();
+            $('#part3').fadeIn();
+            $('#part4').fadeIn();
+            part1.style.margin = 0;
+            fade1.style.marginLeft = 0;
+            fade1.style.opacity = 1;
+            var error1 = setTimeout(function(){
+                if (loader1.style.display == "block"){
+                    loader1.innerHTML = '<section class="main">Tooks too long to respond</section>';
+                    setTimeout(() => {
+                        $("#loader1").fadeOut();
+                    }, 2000);
+                    setTimeout(() => {
+                        loader1.innerHTML = '<section class="main"><section class="loadanim"></section><br>Fetching...</section>';
+                    }, 4000);
+                } else {}
+            }, 4000);
+            try {
+                username01 = userid;
+                levell01 = randomNumber1(1,15);
+                xps01 = randomNumber1(100,10000);
+                bio01 = msg11[randomNumber1(0,10)];
+                followers01 = randomNumber1(1,1000);
+                following01 = randomNumber1(1,100);
+                streak1 =  randomNumber1(1,900);
+            } catch(err){
+                topnav.style.background = "var(--blue1)";
+                profile2.innerHTML = "<section class='top40'></section><section class='center1 top40'>Unable to Fetch<br>Server might be down or document structure might have been changed. Please ReRun the code</section>";
+                $("#loader1").fadeOut();
+            }
+            
+            try {
+                avatar.src = "https://api.sololearn.com/Uploads/Avatars/1.jpg";
+                document.getElementById('avatar').setAttribute("class", userid);
+                username.innerHTML = username01;
+                levell.innerHTML = levell01;
+                xps.innerHTML = xps01;
+                bio.innerHTML = bio01;
+                followers.innerHTML = followers01;
+                following.innerHTML = following01;
+            } catch (err){}
+
+            try {streakflex1.innerHTML = "";
+            let streakno1 = streak1%7;
+            let streakno2 = 7-streakno1;
+            if (streak1 == 0){
+                for (i=0; i<7; i++){
+                    round2("streakflex1");
+                }
+            } else if (streakno1 == 0 && streak1 > 0){
+                for (i=0; i<1; i++){
+                    round1("streakflex1");
+                }
+                for (i=0; i<6; i++){
+                    round2("streakflex1");
+                }
+            } else {
+                for (i=0; i<streakno1; i++){
+                    round1("streakflex1");
+                }
+                for (i=0; i<streakno2; i++){
+                    round2("streakflex1");
+                }
+            }
+            
+            streak.innerHTML = '<svg class="firesvg" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><path style="fill:var(--red1);" d="M97.103,353.103C97.103,440.86,168.244,512,256,512l0,0c87.756,0,158.897-71.14,158.897-158.897  c0-88.276-44.138-158.897-14.524-220.69c0,0-47.27,8.828-73.752,79.448c0,0-88.276-88.276-51.394-211.862  c0,0-89.847,35.31-80.451,150.069c8.058,98.406-9.396,114.759-9.396,114.759c0-79.448-62.115-114.759-62.115-114.759  C141.241,247.172,97.103,273.655,97.103,353.103z"/><path style="fill:#FFDC64;" d="M370.696,390.734c0,66.093-51.033,122.516-117.114,121.241  c-62.188-1.198-108.457-48.514-103.512-110.321c2.207-27.586,23.172-72.276,57.379-117.517l22.805,13.793  C229.517,242.023,256,167.724,256,167.724C273.396,246.007,370.696,266.298,370.696,390.734z"/><path style="fill:#FFFFFF;" d="M211.862,335.448c-8.828,52.966-26.483,72.249-26.483,105.931C185.379,476.69,216.998,512,256,512  l0,0c39.284,0,70.729-32.097,70.62-71.381c-0.295-105.508-61.792-158.136-61.792-158.136c8.828,52.966-17.655,79.448-17.655,79.448  C236.141,345.385,211.862,335.448,211.862,335.448z"/><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></><g></g><g></g><g></g><g></g><g></g><g></g></svg>'+streak1+' DAYS STREAK';} catch (err){}
+            var codearrPro = ['', 'Justin bieber bio', 'Facebook app UI', 'My physics engine', 'ToDo list app', 'Magical words', 'What is AI', 'Check your number', 'Rainy day', 'Color game', 'Customizable particles'];
+            var langArr = ['', 'Web', 'Cpp', 'Java', 'Py', 'C']
+            try {
+                let codeno = randomNumber1(1, 10);
+                if (codeno == 0){
+                    part3.style.display = 'none';
+                } else {
+                    for (i=0; i<codeno; i++){
+                        let codelang = langArr[randomNumber1(1,5)];
+                        let codename = codearrPro[randomNumber1(1,10)];
+                        codeshold.innerHTML += '<section class="card2"><span class="codetype">'+codelang+'</span><span class="codename">'+codename+'</span></section>';
+                    }
+                }
+            } catch(err){
+                part3.style.display = 'none';
+            }
+            clearTimeout(error1);
+            setTimeout(() => {
+                $("#loader1").fadeOut();
+            }, 400);
+        }
+
+        codes1();
+    </script>
+
+</body>
+</html>
