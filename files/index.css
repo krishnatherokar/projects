@@ -1,0 +1,27 @@
+body {
+    font-family: "Quicksand", calibri;
+    font-weight: 500;
+}
+
+.desc {
+    font-size: 24px;
+    text-align: center;
+    color: #505050;
+    margin: 80px 20px;
+}
+
+a button {
+    border: none;
+    background-color: #ffffff;
+    font-size: 20px;
+    padding: 16px;
+    border-radius: 4px;
+    margin: 20px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 6px 6px 14px #d5d5d5;
+}
+
+.buttons {
+    text-align: center;
+}
