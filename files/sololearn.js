@@ -8,7 +8,7 @@ function getq(q){
     return document.querySelectorAll(q);
 }
 
-function randomNumber1(min, max) {
+function rnum(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
 //function for streak circles
@@ -21,39 +21,40 @@ function round2(iid){
 }
 //function for creating question
 function question1(iid, ques1, tag, id1, user, likes){
-    getid(iid).innerHTML += '<section class="card3"><span class="upvotes"><svg fill="var(--dark4)" viewBox="0 0 512 512"><path d="M256,156c0-9.2-7.5-16.7-16.7-16.7h-86.4L164,86.4c0.2-1.2,0.4-2.6,0.4-3.9c0-5.2-2.1-9.8-5.5-13.2L145.7,56l-82.3,82.3  c-4.5,4.5-7.3,10.8-7.3,17.7v108.3c0,13.8,11.2,25,25,25h112.5c10.3,0,19.2-6.2,23-15.2l37.8-88.2c1.1-2.8,1.8-5.8,1.8-9.1V156z   M431,222.7H318.5c-10.3,0-19.2,6.2-23,15.2l-37.8,88.2c-1.1,2.8-1.7,5.8-1.7,9.1V356c0,9.2,7.5,16.7,16.7,16.7h86.4L348,425.6  c-0.2,1.2-0.4,2.6-0.4,3.9c0,5.2,2.1,9.8,5.5,13.2l13.3,13.2l82.3-82.3c4.5-4.5,7.3-10.8,7.3-17.7V247.7  C456,233.8,444.8,222.7,431,222.7z"></path></svg>'+likes+'</span><span class="question">'+ques1+'</span><br><span class="tag">'+tag+'</span><img onclick="profile1(\''+user+'\')" class="avatar1" src="https://api.sololearn.com/Uploads/Avatars/'+id1+'.jpg" onerror=this.src="files/img/sololearnLogo.webp"><span onclick="profile1(\''+user+'\')" class="name1">'+user+'</span><span class="views"><svg fill="var(--dark4)" viewBox="0 0 24 24"><path d="M15 12c0 1.654-1.346 3-3 3s-3-1.346-3-3 1.346-3 3-3 3 1.346 3 3zm9-.449s-4.252 8.449-11.985 8.449c-7.18 0-12.015-8.449-12.015-8.449s4.446-7.551 12.015-7.551c7.694 0 11.985 7.551 11.985 7.551zm-7 .449c0-2.757-2.243-5-5-5s-5 2.243-5 5 2.243 5 5 5 5-2.243 5-5z"/></svg> '+randomNumber1(100, 1000)+'</span></section>';
+    getid(iid).innerHTML += '<section class="card3"><span class="upvotes"><svg fill="var(--dark4)" viewBox="0 0 512 512"><path d="M256,156c0-9.2-7.5-16.7-16.7-16.7h-86.4L164,86.4c0.2-1.2,0.4-2.6,0.4-3.9c0-5.2-2.1-9.8-5.5-13.2L145.7,56l-82.3,82.3  c-4.5,4.5-7.3,10.8-7.3,17.7v108.3c0,13.8,11.2,25,25,25h112.5c10.3,0,19.2-6.2,23-15.2l37.8-88.2c1.1-2.8,1.8-5.8,1.8-9.1V156z   M431,222.7H318.5c-10.3,0-19.2,6.2-23,15.2l-37.8,88.2c-1.1,2.8-1.7,5.8-1.7,9.1V356c0,9.2,7.5,16.7,16.7,16.7h86.4L348,425.6  c-0.2,1.2-0.4,2.6-0.4,3.9c0,5.2,2.1,9.8,5.5,13.2l13.3,13.2l82.3-82.3c4.5-4.5,7.3-10.8,7.3-17.7V247.7  C456,233.8,444.8,222.7,431,222.7z"></path></svg>'+likes+'</span><span class="question">'+ques1+'</span><br><span class="tag">'+tag+'</span><img onclick="profile1(\''+user+'\')" class="avatar1" src="https://api.sololearn.com/Uploads/Avatars/'+id1+'.jpg" onerror=this.src="files/img/sololearnLogo.webp"><span onclick="profile1(\''+user+'\')" class="name1">'+user+'</span><span class="views"><svg fill="var(--dark4)" viewBox="0 0 24 24"><path d="M15 12c0 1.654-1.346 3-3 3s-3-1.346-3-3 1.346-3 3-3 3 1.346 3 3zm9-.449s-4.252 8.449-11.985 8.449c-7.18 0-12.015-8.449-12.015-8.449s4.446-7.551 12.015-7.551c7.694 0 11.985 7.551 11.985 7.551zm-7 .449c0-2.757-2.243-5-5-5s-5 2.243-5 5 2.243 5 5 5 5-2.243 5-5z"/></svg> '+rnum(100, 1000)+'</span></section>';
 }
 
 function course1(iid, src, cls){
-    getid(iid).innerHTML += '<img class="courseround '+cls+'"  src="'+src+'" onerror=this.src="files/img/Course1.png">';
+    clsBor = {0: 'partbor', .5: 'halfbor', 1: 'fullbor'}
+    getid('coursehold'+String(iid)).innerHTML += '<img class="courseround '+clsBor[cls]+'"  src="files/img/'+src+'" onerror=this.src="files/img/Course1.png">';
 }
 
 function coach1(iid, src){
-    getid(iid).innerHTML += '<img class="coachimg"  src="'+src+'" onerror=this.src="files/img/Course1.png">';
+    getid('coursehold'+String(iid)).innerHTML += '<img class="coachimg"  src="files/img/'+src+'" onerror=this.src="files/img/Course1.png">';
 }
 
 function code3(iid, id1, codename1, user, likes){
-    getid(iid).innerHTML += '<section class="card3 flex"><section class="wrapimg"><img class="avatar1" onclick="profile1(\''+user+'\')" src="https://api.sololearn.com/Uploads/Avatars/'+id1+'.jpg" onerror=this.src="files/img/sololearnLogo.webp"></section><section class="wrapcode"><span class="codename1">'+codename1+'</span><span class="name1"><span onclick="profile1(\''+user+'\')">'+user+'</span></span><span class="views"><svg viewBox="0 0 15.571 15.571"><g><g><path style="fill:var(--dark4);" d="M3.73,3.771h0.708c0.26,0,0.471-0.166,0.471-0.374V0.373C4.909,0.166,4.7,0,4.438,0H3.73    C3.47,0,3.258,0.167,3.258,0.373v3.024C3.258,3.605,3.47,3.771,3.73,3.771z"/><path style="fill:var(--dark4);" d="M11.132,3.771h0.707c0.263,0,0.471-0.166,0.471-0.374V0.373C12.31,0.166,12.102,0,11.839,0h-0.707    c-0.26,0-0.471,0.167-0.471,0.373v3.024C10.662,3.605,10.872,3.771,11.132,3.771z"/><path style="fill:var(--dark4);" d="M14.751,1.443h-1.876v2.316c0,0.517-0.465,0.938-1.037,0.938h-0.707    c-0.572,0-1.038-0.421-1.038-0.938V1.443h-4.62v2.316c0,0.517-0.465,0.938-1.038,0.938H3.73c-0.57,0-1.037-0.421-1.037-0.938    V1.443H0.816c-0.312,0-0.566,0.255-0.566,0.568v12.994c0,0.313,0.254,0.566,0.347,0.566h13.938c0.53,0,0.786-0.253,0.786-0.566    V2.009C15.32,1.698,15.064,1.443,14.751,1.443z M14.447,14.287c0,0.564-0.486,0.515-0.486,0.515H8.88c0,0,3.107-1.557,5.567-3.768    C14.447,11.034,14.447,13.635,14.447,14.287z M14.554,9.474c-0.213,0.841-0.684,1.815-1.543,1.178    c-1.252-0.927-2.486-1.714-2.645,0.15c-0.131,1.57-3.033,3.705-3.665,4.151H1.193c-0.099,0-0.177-0.079-0.177-0.177v-8.01    c0-0.099,0.079-0.178,0.177-0.178h13.184c0.097,0,0.178,0.079,0.178,0.178L14.554,9.474L14.554,9.474z"/><rect x="3.258" y="7.97" style="fill:var(--dark4);" width="2.202" height="2.201"/><rect x="6.88" y="7.97" style="fill:var(--dark4);" width="2.2" height="2.201"/><rect x="3.258" y="11.309" style="fill:var(--dark4);" width="2.202" height="2.201"/><path style="fill:var(--dark4);" d="M6.88,13.51h0.637c0.465-0.436,1.168-1.157,1.563-1.652v-0.549h-2.2V13.51z"/><path style="fill:var(--dark4);" d="M10.386,9.008c0.222-0.217,0.489-0.283,0.729-0.283c0.453,0,0.952,0.253,1.471,0.596V7.97h-2.2    V9.008z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg> '+randomNumber1(2, 24)+' Hrs<svg fill="var(--dark4)" viewBox="0 0 24 24"><path d="M15 12c0 1.654-1.346 3-3 3s-3-1.346-3-3 1.346-3 3-3 3 1.346 3 3zm9-.449s-4.252 8.449-11.985 8.449c-7.18 0-12.015-8.449-12.015-8.449s4.446-7.551 12.015-7.551c7.694 0 11.985 7.551 11.985 7.551zm-7 .449c0-2.757-2.243-5-5-5s-5 2.243-5 5 2.243 5 5 5 5-2.243 5-5z"/></svg> '+randomNumber1(200, 2000)+'</span><span class="upvotes"><svg fill="var(--dark4)" viewBox="0 0 512 512"><path d="M256,156c0-9.2-7.5-16.7-16.7-16.7h-86.4L164,86.4c0.2-1.2,0.4-2.6,0.4-3.9c0-5.2-2.1-9.8-5.5-13.2L145.7,56l-82.3,82.3  c-4.5,4.5-7.3,10.8-7.3,17.7v108.3c0,13.8,11.2,25,25,25h112.5c10.3,0,19.2-6.2,23-15.2l37.8-88.2c1.1-2.8,1.8-5.8,1.8-9.1V156z   M431,222.7H318.5c-10.3,0-19.2,6.2-23,15.2l-37.8,88.2c-1.1,2.8-1.7,5.8-1.7,9.1V356c0,9.2,7.5,16.7,16.7,16.7h86.4L348,425.6  c-0.2,1.2-0.4,2.6-0.4,3.9c0,5.2,2.1,9.8,5.5,13.2l13.3,13.2l82.3-82.3c4.5-4.5,7.3-10.8,7.3-17.7V247.7  C456,233.8,444.8,222.7,431,222.7z"/></svg>'+likes+'</span></section></section>';
+    getid(iid).innerHTML += '<section class="card3 flex"><section class="wrapimg"><img class="avatar1" onclick="profile1(\''+user+'\')" src="https://api.sololearn.com/Uploads/Avatars/'+id1+'.jpg" onerror=this.src="files/img/sololearnLogo.webp"></section><section class="wrapcode"><span class="codename1">'+codename1+'</span><span class="name1"><span onclick="profile1(\''+user+'\')">'+user+'</span></span><span class="views"><svg viewBox="0 0 15.571 15.571"><g><g><path style="fill:var(--dark4);" d="M3.73,3.771h0.708c0.26,0,0.471-0.166,0.471-0.374V0.373C4.909,0.166,4.7,0,4.438,0H3.73    C3.47,0,3.258,0.167,3.258,0.373v3.024C3.258,3.605,3.47,3.771,3.73,3.771z"/><path style="fill:var(--dark4);" d="M11.132,3.771h0.707c0.263,0,0.471-0.166,0.471-0.374V0.373C12.31,0.166,12.102,0,11.839,0h-0.707    c-0.26,0-0.471,0.167-0.471,0.373v3.024C10.662,3.605,10.872,3.771,11.132,3.771z"/><path style="fill:var(--dark4);" d="M14.751,1.443h-1.876v2.316c0,0.517-0.465,0.938-1.037,0.938h-0.707    c-0.572,0-1.038-0.421-1.038-0.938V1.443h-4.62v2.316c0,0.517-0.465,0.938-1.038,0.938H3.73c-0.57,0-1.037-0.421-1.037-0.938    V1.443H0.816c-0.312,0-0.566,0.255-0.566,0.568v12.994c0,0.313,0.254,0.566,0.347,0.566h13.938c0.53,0,0.786-0.253,0.786-0.566    V2.009C15.32,1.698,15.064,1.443,14.751,1.443z M14.447,14.287c0,0.564-0.486,0.515-0.486,0.515H8.88c0,0,3.107-1.557,5.567-3.768    C14.447,11.034,14.447,13.635,14.447,14.287z M14.554,9.474c-0.213,0.841-0.684,1.815-1.543,1.178    c-1.252-0.927-2.486-1.714-2.645,0.15c-0.131,1.57-3.033,3.705-3.665,4.151H1.193c-0.099,0-0.177-0.079-0.177-0.177v-8.01    c0-0.099,0.079-0.178,0.177-0.178h13.184c0.097,0,0.178,0.079,0.178,0.178L14.554,9.474L14.554,9.474z"/><rect x="3.258" y="7.97" style="fill:var(--dark4);" width="2.202" height="2.201"/><rect x="6.88" y="7.97" style="fill:var(--dark4);" width="2.2" height="2.201"/><rect x="3.258" y="11.309" style="fill:var(--dark4);" width="2.202" height="2.201"/><path style="fill:var(--dark4);" d="M6.88,13.51h0.637c0.465-0.436,1.168-1.157,1.563-1.652v-0.549h-2.2V13.51z"/><path style="fill:var(--dark4);" d="M10.386,9.008c0.222-0.217,0.489-0.283,0.729-0.283c0.453,0,0.952,0.253,1.471,0.596V7.97h-2.2    V9.008z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg> '+rnum(2, 24)+' Hrs<svg fill="var(--dark4)" viewBox="0 0 24 24"><path d="M15 12c0 1.654-1.346 3-3 3s-3-1.346-3-3 1.346-3 3-3 3 1.346 3 3zm9-.449s-4.252 8.449-11.985 8.449c-7.18 0-12.015-8.449-12.015-8.449s4.446-7.551 12.015-7.551c7.694 0 11.985 7.551 11.985 7.551zm-7 .449c0-2.757-2.243-5-5-5s-5 2.243-5 5 2.243 5 5 5 5-2.243 5-5z"/></svg> '+rnum(200, 2000)+'</span><span class="upvotes"><svg fill="var(--dark4)" viewBox="0 0 512 512"><path d="M256,156c0-9.2-7.5-16.7-16.7-16.7h-86.4L164,86.4c0.2-1.2,0.4-2.6,0.4-3.9c0-5.2-2.1-9.8-5.5-13.2L145.7,56l-82.3,82.3  c-4.5,4.5-7.3,10.8-7.3,17.7v108.3c0,13.8,11.2,25,25,25h112.5c10.3,0,19.2-6.2,23-15.2l37.8-88.2c1.1-2.8,1.8-5.8,1.8-9.1V156z   M431,222.7H318.5c-10.3,0-19.2,6.2-23,15.2l-37.8,88.2c-1.1,2.8-1.7,5.8-1.7,9.1V356c0,9.2,7.5,16.7,16.7,16.7h86.4L348,425.6  c-0.2,1.2-0.4,2.6-0.4,3.9c0,5.2,2.1,9.8,5.5,13.2l13.3,13.2l82.3-82.3c4.5-4.5,7.3-10.8,7.3-17.7V247.7  C456,233.8,444.8,222.7,431,222.7z"/></svg>'+likes+'</span></section></section>';
 }
 
 function feed1(iid, id1, user, title, content){
-    getid(iid).innerHTML += '<section class="card1"><img class="avatar4" onclick="profile1(\''+user+'\')" src="https://api.sololearn.com/Uploads/Avatars/'+id1+'.jpg" onerror=this.src="files/img/sololearnLogo.webp"><span onclick="profile1(\''+user+'\')" class="blueclr1 size2">'+user+' </span><span class="txtclr5 size2">'+title+'</span><br><section class="content1"><span class="right ic2">"</span><span class="maincont">'+content+'</span><span class="left ic1">"</span></section><span class="arroww1">&gt;</span><span class="likess">+'+randomNumber1(10, 100)+'</span><span class="arroww2">&lt;</span><span class="time1">'+randomNumber1(2, 24)+' Hrs</span></section>';
+    getid(iid).innerHTML += '<section class="card1"><img class="avatar4" onclick="profile1(\''+user+'\')" src="https://api.sololearn.com/Uploads/Avatars/'+id1+'.jpg" onerror=this.src="files/img/sololearnLogo.webp"><span onclick="profile1(\''+user+'\')" class="blueclr1 size2">'+user+' </span><span class="txtclr5 size2">'+title+'</span><br><section class="content1"><span class="right ic2">"</span><span class="maincont">'+content+'</span><span class="left ic1">"</span></section><span class="arroww1">&gt;</span><span class="likess">+'+rnum(10, 100)+'</span><span class="arroww2">&lt;</span><span class="time1">'+rnum(2, 24)+' Hrs</span></section>';
 }
 //define function for creating post
 function feed2(iid, id1, user, title, imgsrc){
-    getid(iid).innerHTML += '<section class="card1"><img class="avatar4" onclick="profile1(\''+user+'\')" src="https://api.sololearn.com/Uploads/Avatars/'+id1+'.jpg" onerror=this.src="files/img/sololearnLogo.webp"><span onclick="profile1(\''+user+'\')" class="blueclr1 size2">'+user+' </span><span class="txtclr5 size2">'+title+'</span><br><img class="postimg1" src="'+imgsrc+'" onload=this.style.height="auto" onerror=this.src="files/img/Noimg.png"><span class="arroww1">&gt;</span><span class="likess">+'+randomNumber1(10, 1000)+'</span><span class="arroww2">&lt;</span><span class="time1">'+randomNumber1(2, 24)+' Hrs</span></section>';
+    getid(iid).innerHTML += '<section class="card1"><img class="avatar4" onclick="profile1(\''+user+'\')" src="https://api.sololearn.com/Uploads/Avatars/'+id1+'.jpg" onerror=this.src="files/img/sololearnLogo.webp"><span onclick="profile1(\''+user+'\')" class="blueclr1 size2">'+user+' </span><span class="txtclr5 size2">'+title+'</span><br><img class="postimg1" src="'+imgsrc+'" onload=this.style.height="auto" onerror=this.src="files/img/Noimg.png"><span class="arroww1">&gt;</span><span class="likess">+'+rnum(10, 1000)+'</span><span class="arroww2">&lt;</span><span class="time1">'+rnum(2, 24)+' Hrs</span></section>';
 }
 
 function notif1(iid, id1, user, title){
-    getid(iid).innerHTML += '<section class="card3"><img class="avatar1" onclick="profile1(\''+user+'\')" src="https://api.sololearn.com/Uploads/Avatars/'+id1+'.jpg" onerror=this.src="files/img/sololearnLogo.webp"><span onclick="profile1(\''+user+'\')" class="blueclr1 size2">'+user+' </span><span class="txtclr6 size2">'+title+'</span><span class="txtclr3 time1">'+randomNumber1(2, 24)+' Hrs</span></section>';
+    getid(iid).innerHTML += '<section class="card3"><img class="avatar1" onclick="profile1(\''+user+'\')" src="https://api.sololearn.com/Uploads/Avatars/'+id1+'.jpg" onerror=this.src="files/img/sololearnLogo.webp"><span onclick="profile1(\''+user+'\')" class="blueclr1 size2">'+user+' </span><span class="txtclr6 size2">'+title+'</span><span class="txtclr3 time1">'+rnum(2, 24)+' Hrs</span></section>';
 }
 //define function for creating DMs
 function msg3(iid, id1, user, title){
-    getid(iid).innerHTML += '<section class="card3"><span class="txtclr3 time1">'+randomNumber1(2, 24)+' Hrs</span><section class="flex"><img onclick="profile1(\''+user+'\')" class="avatar1" src="https://api.sololearn.com/Uploads/Avatars/'+id1+'.jpg" onerror=this.src="files/img/sololearnLogo.webp"><section onclick="chatbot2('+id1+', \''+user+'\')" class="main1"><span class="blueclr1 size2">'+user+'</span><br><span class="txtclr6 size2">'+title+'</span></section></section></section>';
+    getid(iid).innerHTML += '<section class="card3"><span class="txtclr3 time1">'+rnum(2, 24)+' Hrs</span><section class="flex"><img onclick="profile1(\''+user+'\')" class="avatar1" src="https://api.sololearn.com/Uploads/Avatars/'+id1+'.jpg" onerror=this.src="files/img/sololearnLogo.webp"><section onclick="chatbot2('+id1+', \''+user+'\')" class="main1"><span class="blueclr1 size2">'+user+'</span><br><span class="txtclr6 size2">'+title+'</span></section></section></section>';
 }
 //define function for creating suggestions
-function sugest(iid, wid, sug){
-    getid(iid).innerHTML += '<span class="pill1" style="min-width:'+wid+'px" onclick="setvalue(\''+sug+'\')">'+sug+'</span>';
+function sugest(sug){
+    getid("suggestions").innerHTML += '<span class="pill1" style="min-width:'+sug.length*10+'px" onclick="setvalue(\''+sug+'\')">'+sug+'</span>';
 }
 //define elements
 var all1 = getq("*");
@@ -118,7 +119,7 @@ var msghold1 = getid("msghold1");
 var feedhold1 = getid("feedhold1");
 var feedhold2 = getid("feedhold2");
 
-var navcontent1 = '<span onclick="settingshow1()" class="menu1">&#9776;</span><svg fill="#fff" class="msg1" onclick="swipe2show2()"  viewBox="0 -30 200 300" style="enable-background:new 0 0 233.058 233.058;" xml:space="preserve"><g><path d="M116.538,4.05C52.284,4.05,0,45.321,0,96.043c0,28.631,16.729,55.208,45.889,72.911c4.525,2.737,7.635,7.283,8.572,12.478   c2.876,16.045-0.991,32.948-6.758,47.576c19.239-9.134,39.064-23.161,54.8-36.63c3.879-3.314,9.055-4.701,14.087-4.354h0.023   c64.191,0,116.445-41.259,116.445-91.987C233.058,45.321,180.792,4.05,116.538,4.05z"/></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg><svg class="bell1" onclick="swipe2show1()" viewBox="0 0 512 512" fill="#fff"><g><path d="M381.7,225.9c0-97.6-52.5-130.8-101.6-138.2c0-0.5,0.1-1,0.1-1.6c0-12.3-10.9-22.1-24.2-22.1c-13.3,0-23.8,9.8-23.8,22.1   c0,0.6,0,1.1,0.1,1.6c-49.2,7.5-102,40.8-102,138.4c0,113.8-28.3,126-66.3,158h384C410.2,352,381.7,339.7,381.7,225.9z"/><path d="M256.2,448c26.8,0,48.8-19.9,51.7-43H204.5C207.3,428.1,229.4,448,256.2,448z"/></g></svg><section id="topinfo" onclick="swipe2show2()">'+randomNumber1(20,100)+'</section>';
+var navcontent1 = '<span onclick="settingshow1()" class="menu1">&#9776;</span><svg fill="#fff" class="msg1" onclick="swipe2show2()"  viewBox="0 -30 200 300" style="enable-background:new 0 0 233.058 233.058;" xml:space="preserve"><g><path d="M116.538,4.05C52.284,4.05,0,45.321,0,96.043c0,28.631,16.729,55.208,45.889,72.911c4.525,2.737,7.635,7.283,8.572,12.478   c2.876,16.045-0.991,32.948-6.758,47.576c19.239-9.134,39.064-23.161,54.8-36.63c3.879-3.314,9.055-4.701,14.087-4.354h0.023   c64.191,0,116.445-41.259,116.445-91.987C233.058,45.321,180.792,4.05,116.538,4.05z"/></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg><svg class="bell1" onclick="swipe2show1()" viewBox="0 0 512 512" fill="#fff"><g><path d="M381.7,225.9c0-97.6-52.5-130.8-101.6-138.2c0-0.5,0.1-1,0.1-1.6c0-12.3-10.9-22.1-24.2-22.1c-13.3,0-23.8,9.8-23.8,22.1   c0,0.6,0,1.1,0.1,1.6c-49.2,7.5-102,40.8-102,138.4c0,113.8-28.3,126-66.3,158h384C410.2,352,381.7,339.7,381.7,225.9z"/><path d="M256.2,448c26.8,0,48.8-19.9,51.7-43H204.5C207.3,428.1,229.4,448,256.2,448z"/></g></svg><section id="topinfo" onclick="swipe2show2()">'+rnum(20,100)+'</section>';
 var navcontent2 = '<section onclick="settingshow1()" class="menu1 fixedleft">&#9776;</section><section class="tophold"><section onclick="community1()" class="txtclr7 size4 navtxt1">Practice</section><section onclick="feed3()" class="txtclr7 size4 navtxt1">Feed</section></section>';
 var navcontent3 = '<section onclick="settingshow1()" class="menu1 fixedleft">&#9776;</section><section class="tophold"><section onclick="notification1()" class="txtclr7 size4 navtxt1">Notifs</section><section onclick="message1()" class="txtclr7 size4 navtxt1">Messages</section></section>';
 
@@ -188,7 +189,7 @@ function codelist(){
         if(arr1.indexOf(r1) === -1) arr1.push(r1);
     }
     for (num=0; num<10; num++){
-        code3('code1', codearr1[arr1[num]], codearr2[arr1[num]], codearr3[arr1[num]], randomNumber1(100, 1000));
+        code3('code1', codearr1[arr1[num]], codearr2[arr1[num]], codearr3[arr1[num]], rnum(100, 1000));
     }
 }
 function queslist(){
@@ -202,7 +203,7 @@ function queslist(){
         if(arr2.indexOf(r2) === -1) arr2.push(r2);
     }
     for (num=0; num<10; num++){
-        question1('ques', quesarr1[arr2[num]], quesarr2[arr2[num]], quesarr3[arr2[num]], quesarr4[arr2[num]], randomNumber1(100, 1000));
+        question1('ques', quesarr1[arr2[num]], quesarr2[arr2[num]], quesarr3[arr2[num]], quesarr4[arr2[num]], rnum(100, 1000));
     }
 }
 function feed1list(){
@@ -266,12 +267,10 @@ function msglist(){
 function learn1(){
     getq(".high1")[0].style.setProperty('fill', 'var(--blue1)');
     getq(".high2")[0].style.setProperty('color', 'var(--blue1)');
-    getq(".high1")[1].style.setProperty('fill', 'var(--dark1)');
-    getq(".high2")[1].style.setProperty('color', 'var(--dark1)');
-    getq(".high1")[2].style.setProperty('fill', 'var(--dark1)');
-    getq(".high2")[2].style.setProperty('color', 'var(--dark1)');
-    getq(".high1")[3].style.setProperty('fill', 'var(--dark1)');
-    getq(".high2")[3].style.setProperty('color', 'var(--dark1)');
+    for (ii=1; ii<=3; ii++){
+        getq(".high1")[ii].style.setProperty('fill', 'var(--dark1)');
+        getq(".high2")[ii].style.setProperty('color', 'var(--dark1)');
+    }
     getq(".high2")[4].style.setProperty('color', 'var(--dark1)');
     coursehold1.innerHTML = "";
     coursehold2.innerHTML = "";
@@ -285,22 +284,22 @@ function learn1(){
     $('#swipe2').hide();
     topnav.innerHTML = navcontent1;
     for (s=0; s<2; s++){
-    course1('coursehold1', 'files/img/Py-1.jpg', 'fullbor');
-    course1('coursehold1', 'files/img/Ai-1.jpg', 'halfbor');
-    course1('coursehold1', 'files/img/Data-1.jpg', 'partbor');
-    course1('coursehold1', 'files/img/Ml-1.jpg', 'fullbor');
-    course1('coursehold2', 'files/img/Html-1.jpg', 'halfbor');
-    course1('coursehold2', 'files/img/Css-1.png', 'halfbor');
-    course1('coursehold2', 'files/img/Js-1.png', 'fullbor');
+    course1(1, 'Py-1.jpg', 1);
+    course1(1, 'Ai-1.jpg', .5);
+    course1(1, 'Data-1.jpg', 0);
+    course1(1, 'Ml-1.jpg', 1);
+    course1(2, 'Html-1.jpg', .5);
+    course1(2, 'Css-1.png', .5);
+    course1(2, 'Js-1.png', 1);
     }
-    course1('coursehold3', 'files/img/React-1.png', 'partbor');
-    course1('coursehold3', 'files/img/Redux-1.png', 'halfbor');
-    course1('coursehold3', 'files/img/C-1.png', 'fullbor');
-    course1('coursehold3', 'files/img/Cpp-1.png', 'fullbor');
-    course1('coursehold3', 'files/img/Cs-1.png', 'halfbor');
-    course1('coursehold3', 'files/img/Py-1.jpg', 'partbor');
-    course1('coursehold3', 'files/img/Java-1.png', 'partbor');
-    course1('coursehold3', 'files/img/Js-1.png', 'fullbor');
+    course1(3, 'React-1.png', 0);
+    course1(3, 'Redux-1.png', .5);
+    course1(3, 'C-1.png', 1);
+    course1(3, 'Cpp-1.png', 1);
+    course1(3, 'Cs-1.png', .5);
+    course1(3, 'Py-1.jpg', 0);
+    course1(3, 'Java-1.png', 0);
+    course1(3, 'Js-1.png', 1);
     coursehold4.innerHTML = "";
     coursehold5.innerHTML = "";
     notifhold1.innerHTML = "";
@@ -336,12 +335,12 @@ function swipe1show(){
     $('#swipe2').hide();
     topnav.innerHTML = navcontent2;
     for (t=0; t<2; t++){
-    coach1('coursehold4', 'files/img/Fruit-1.jpg');
-    coach1('coursehold4', 'files/img/Secret-password-1.png');
-    coach1('coursehold4', 'files/img/Security-1.jpg');
-    course1('coursehold5', 'files/img/Kotlin-1.jpg', 'halfbor');
-    course1('coursehold5', 'files/img/Data-structures-1.jpg', 'fullbor');
-    course1('coursehold5', 'files/img/Data-1.jpg', 'partbor');
+    coach1(4, 'Fruit-1.jpg');
+    coach1(4, 'Secret-password-1.png');
+    coach1(4, 'Security-1.jpg');
+    course1(5, 'Kotlin-1.jpg', .5);
+    course1(5, 'Data-structures-1.jpg', 1);
+    course1(5, 'Data-1.jpg', 0);
     }
     feed1list();
     votes1();
@@ -672,7 +671,7 @@ function showmeme(){
         if (memeimg.length == memelink.length){
             finalmeme = 'No'
         } else {
-            memeno = randomNumber1(0,4);
+            memeno = rnum(0,4);
             finalmeme = memelink[memeno];
             for (i=0; i<memeimg.length; i++){
                 if (memeimg[i].src == finalmeme){checklink()} else {}
@@ -692,7 +691,6 @@ var num1 = 100;
 var num2 = 1000;
 function submitmsg(){
     msg10 = ['Hello', 'Converting oxygen to carbon dioxide', 'Chatting with you', 'I\'m fine', 'Just like you!', 'Just like any human being haha', 'I\'m mad', 'What do you think?', 'Alien!!', gettime(), 'Javascript', 'Python', 'Java', 'Html', 'Kuch kaam nahi lol', 'Oxygen ko carbon dioxide me convert', 'Kuch nhi', 'Mujhe nhi pta', 'I don\'t know', 'What do you think?', 'Shut up', 'Nooo', 'Tum ho!', 'Nhii', 'Lol', 'Really?', getbatt(), 'This code is created by Krishna Therokar', 'Btw, what\'s your name?', 'Hehe', 'No', 'Yes', 'What you\'re doing?', 'I don\'t know', 'Can you hack NASA with CSS?', 'Bye', 'What you\'re saying?', 'Nothing much tbh', 'Lol', 'Yeah so', 'You are awesome', 'Nice', showmeme()];
-    suggestions.scrollTo(num1, 0);
     num1 += 100;
     inputformsg.focus();
     msg1 = inputformsg.value;
@@ -701,22 +699,58 @@ function submitmsg(){
     window.scrollTo(0, num2);
     num2 += 1000;
     msg = msg1.toLowerCase();
-    if (msg == 'hello' || msg == 'hi' || msg == 'hlo' || msg == 'hey' || msg == 'hii'){msgno = 0}
-    else if (msg.includes('what') && (msg.includes('you') || msg.includes('u')) && msg.includes('doing')){msgno = randomNumber1(1,3)}
-    else if (msg.includes('how') && (msg.includes('are') || msg.includes('r')) && (msg.includes('you') || msg.includes('u'))){msgno = randomNumber1(3,6)}
-    else if (msg.includes('who') && (msg.includes('are') || msg.includes('r')) && (msg.includes('you') || msg.includes('u'))){msgno = randomNumber1(6, 9)}
-    else if (msg.includes('what') && msg.includes('time') && msg.includes('now')){msgno = 9}
-    else if (msg.includes('what') && (msg.includes('you') || msg.includes('u')) && msg.includes('learning')){msgno = randomNumber1(10,14)}
-    else if ((msg.includes('you') || msg.includes('u')) && (msg.includes('mad') || msg.includes('stupid'))){msgno = randomNumber1(20,22)}
-    else if (msg.includes('what') && msg.includes('battery')){msgno = 26}
-    else if (msg.includes('who') && (msg.includes('creator') || msg.includes('created')) && msg.includes('code')){msgno = 27}
-    else if (msg.includes('show') && msg.includes('meme')){msgno = 42}
-    else if (msg.includes('what') || msg.includes('why') || msg.includes('how')){msgno = randomNumber1(18,20)}
-    else if ((msg.includes('kya') || msg.includes('ky')) && (msg.includes('kr') || msg.includes('kar') || msg.includes('chl') || msg.includes('chal'))){msgno = randomNumber1(14,16)}
-    else if ((msg.includes('tum') || msg.includes('tu')) && (msg.includes('pagal') || msg.includes('pgl') || msg.includes('mad'))){msgno = randomNumber1(22,24)}
-    else if (msg.includes('kya') || msg.includes('kaise') || msg.includes('kyu')){msgno = randomNumber1(16,18)}
-    else {msgno = randomNumber1(28,42)}
-    msg2 = msg10[msgno];
+    if (msg == 'hello' || msg == 'hi' || msg == 'hlo' || msg == 'hey' || msg == 'hii'){
+        msgno = 0
+    }
+    else if (msg.includes('what') && (msg.includes('you') || msg.includes('u')) && msg.includes('doing')){
+        msgno = rnum(1,3)
+    }
+    else if (msg.includes('how') && (msg.includes('are') || msg.includes('r')) && (msg.includes('you') || msg.includes('u'))){
+        msgno = rnum(3,6)
+    }
+    else if (msg.includes('who') && (msg.includes('are') || msg.includes('r')) && (msg.includes('you') || msg.includes('u'))){
+        msgno = rnum(6, 9)
+    }
+    else if (msg.includes('what') && msg.includes('time') && msg.includes('now')){
+        msgno = 9
+    }
+    else if (msg.includes('what') && (msg.includes('you') || msg.includes('u')) && msg.includes('learning')){
+        msgno = rnum(10,14)
+    }
+    else if ((msg.includes('you') || msg.includes('u')) && (msg.includes('mad') || msg.includes('stupid'))){
+        msgno = rnum(20,22)
+    }
+    else if (msg.includes('what') && msg.includes('battery')){
+        msgno = 26
+    }
+    else if (msg.includes('who') && (msg.includes('creator') || msg.includes('created')) && msg.includes('code')){
+        msgno = 27
+    }
+    else if (msg.includes('show') && msg.includes('meme')){
+        msgno = 42
+    }
+    else if (msg.includes('what') || msg.includes('why') || msg.includes('how')){
+        msgno = rnum(18,20)
+    }
+    else if ((msg.includes('kya') || msg.includes('ky')) && (msg.includes('kr') || msg.includes('kar') || msg.includes('chl') || msg.includes('chal'))){
+        msgno = rnum(14,16)
+    }
+    else if ((msg.includes('tum') || msg.includes('tu')) && (msg.includes('pagal') || msg.includes('pgl') || msg.includes('mad'))){
+        msgno = rnum(22,24)
+    }
+    else if (msg.includes('kya') || msg.includes('kaise') || msg.includes('kyu')){
+        msgno = rnum(16,18)
+    }
+    else {
+        msgno = rnum(28,42)
+    }
+    msg21 = msg10[msgno];
+    if(msgno==42){
+        time1=1000
+    } else {
+        time1 = msg21.length*80
+    }
+    
     setTimeout(() => {
         livemsgholder1.innerHTML += '<section class="innermsghold1"><section class="innermsg2"><section class="dothold"><span class="dott dot1"></span><span class="dott dot2"></span><span class="dott dot3"></span></section></section><section class="whitespace1"></section></section>';
         window.scrollTo(0, num2);
@@ -725,13 +759,13 @@ function submitmsg(){
         var innermsg = getq(".innermsghold1");
         inner1 = innermsg[innermsg.length-1].innerHTML;
         if (inner1.includes('innermsg1')){
-            innermsg[innermsg.length-2].innerHTML = '<section class="innermsg2">'+msg2+'</section><section class="whitespace1"></section>';
+            innermsg[innermsg.length-2].innerHTML = '<section class="innermsg2">'+msg21+'</section><section class="whitespace1"></section>';
         } else {
-            innermsg[innermsg.length-1].innerHTML = '<section class="innermsg2">'+msg2+'</section><section class="whitespace1"></section>';
+            innermsg[innermsg.length-1].innerHTML = '<section class="innermsg2">'+msg21+'</section><section class="whitespace1"></section>';
         }
         window.scrollTo(0, num2);
         num2 += 1000;
-    }, 1400);
+    }, time1);
 }
 $("#form1").submit(function(e){
     e.preventDefault();
@@ -743,52 +777,40 @@ function setvalue(valuee){
     inputformsg.value = valuee;
     submitmsg();
 }
-sugest('suggestions', '120', 'What r u doing?');
-sugest('suggestions', '130', 'Show me a meme');
-sugest('suggestions', '80', 'How r u?');
-sugest('suggestions', '150', 'What time is it now?');
-sugest('suggestions', '140', 'What r u learning?');
-sugest('suggestions', '170', 'Whats my battery level?');
-sugest('suggestions', '100', 'Kya chl rha?');
+
+arrSug = ['What r u doing?','Show me a meme','Whats my battery level?','What time is it now?','How r u?','Kya chal raha hai?']
+for(i=0; i<arrSug.length; i++){
+    sugest(arrSug[i])
+}
+
 function theme1(codee){
     for (i=0; i<all1.length; i++){
         all1[i].style.setProperty('--blue1', '#'+codee);
     }
 }
+arrClr = ['dark1', 'dark2', 'dark3', 'dark4', 'white1', 'white2', 'white3', 'back2']
 function theme2(){
     for (i=0; i<all1.length; i++){
-        all1[i].style.setProperty('--dark1', '#202020');
-        all1[i].style.setProperty('--dark2', '#404040');
-        all1[i].style.setProperty('--dark3', '#606060');
-        all1[i].style.setProperty('--dark4', '#808080');
-        all1[i].style.setProperty('--white1', '#ffffff');
-        all1[i].style.setProperty('--white2', '#f3f3f3');
-        all1[i].style.setProperty('--white3', '#cacaca');
-        all1[i].style.setProperty('--back2', '#bdbdbd40');
+        arrHex = ['202020', '404040', '606060', '808080', 'ffffff', 'f3f3f3', 'cacaca', 'bdbdbd40']
+        for (j=0; j<arrClr.length; j++){
+            all1[i].style.setProperty('--'+arrClr[j], '#'+arrHex[j]);
+        }
     }
 }
 function theme3(){
     for (i=0; i<all1.length; i++){
-        all1[i].style.setProperty('--dark1', '#f3f3f3');
-        all1[i].style.setProperty('--dark2', '#eeeeee');
-        all1[i].style.setProperty('--dark3', '#d8d8d8');
-        all1[i].style.setProperty('--dark4', '#c6c6c6');
-        all1[i].style.setProperty('--white1', '#292c39');
-        all1[i].style.setProperty('--white2', '#1f222f');
-        all1[i].style.setProperty('--white3', '#707070');
-        all1[i].style.setProperty('--back2', '#40404040');
+        arrHex = ['f3f3f3', 'eeeeee', 'd8d8d8', 'c6c6c6', '292c39', '1f222f', '707070', '40404040']
+        for (j=0; j<arrClr.length; j++){
+            all1[i].style.setProperty('--'+arrClr[j], '#'+arrHex[j]);
+        }
     }
 }
 function theme4(){
     for (i=0; i<all1.length; i++){
-        all1[i].style.setProperty('--dark1', '#f3f3f3');
-        all1[i].style.setProperty('--dark2', '#eeeeee');
-        all1[i].style.setProperty('--dark3', '#d8d8d8');
-        all1[i].style.setProperty('--dark4', '#c6c6c6');
-        all1[i].style.setProperty('--white1', '#343434');
-        all1[i].style.setProperty('--white2', '#282828');
-        all1[i].style.setProperty('--white3', '#707070');
-        all1[i].style.setProperty('--back2', '#40404040');
+        arrHex = ['f3f3f3', 'eeeeee', 'd8d8d8', 'c6c6c6', '343434', '282828', '707070', '40404040']
+        for (j=0; j<arrClr.length; j++){
+            all1[i].style.setProperty('--'+arrClr[j], '#'+arrHex[j]);
+        }
     }
 }        
 
@@ -977,12 +999,12 @@ async function data(userid){
     }, 4000);
     try {
         username01 = userid;
-        levell01 = randomNumber1(1,15);
-        xps01 = randomNumber1(100,10000);
-        bio01 = msg11[randomNumber1(0,10)];
-        followers01 = randomNumber1(1,1000);
-        following01 = randomNumber1(1,100);
-        streak1 =  randomNumber1(1,900);
+        levell01 = rnum(1,15);
+        xps01 = rnum(100,10000);
+        bio01 = msg11[rnum(0,10)];
+        followers01 = rnum(1,1000);
+        following01 = rnum(1,100);
+        streak1 =  rnum(1,900);
     } catch(err){
         topnav.style.background = "var(--blue1)";
         profile2.innerHTML = "<section class='top40'></section><section class='center1 top40'>Unable to Fetch<br>Server might be down or document structure might have been changed. Please ReRun the code</section>";
@@ -1027,13 +1049,13 @@ async function data(userid){
     var codearrPro = ['', 'Sololearn clone', 'Facebook app UI', 'My physics engine', 'ToDo list app', 'Magical words', 'What is AI', 'Check your number', 'Rainy day', 'Color game', 'Customizable particles'];
     var langArr = ['', 'Web', 'Cpp', 'Java', 'Py', 'C']
     try {
-        let codeno = randomNumber1(1, 10);
+        let codeno = rnum(1, 10);
         if (codeno == 0){
             part3.style.display = 'none';
         } else {
             for (i=0; i<codeno; i++){
-                let codelang = langArr[randomNumber1(1,5)];
-                let codename = codearrPro[randomNumber1(1,10)];
+                let codelang = langArr[rnum(1,5)];
+                let codename = codearrPro[rnum(1,10)];
                 codeshold.innerHTML += '<section class="card2"><span class="codetype">'+codelang+'</span><span class="codename">'+codename+'</span></section>';
             }
         }
