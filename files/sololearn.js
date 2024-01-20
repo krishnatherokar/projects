@@ -1,3 +1,5 @@
+//While writing this code at that time, I had no idea about file system and hosting them on sites like github. So i used to write the code for all the pages in one file and use the display property to change the content on the page. And hence those properties are getting manipulated for many elements when the visitor clicks some icons, making this code bit too lenghty.
+
 function getid(id){
     return document.getElementById(id);
 }
