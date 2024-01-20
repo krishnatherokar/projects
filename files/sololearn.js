@@ -179,7 +179,7 @@ function chl2(){
 function codelist(){
     var arr1 = [];
     var codearr1 = ['', '19107895', '14022015', '3573369', '19394415', '7439484', '16812836', '19480187', '18717961', '18772045', '18653347'];
-    var codearr2 = ['', 'Justin bieber bio', 'Facebook app UI', 'My physics engine', 'ToDo list app', 'Magical words', 'What is AI', 'Check your number', 'Rainy day', 'Color game', 'Customizable particles'];
+    var codearr2 = ['', 'Sololearn clone', 'Facebook app UI', 'My physics engine', 'ToDo list app', 'Magical words', 'What is AI', 'Check your number', 'Rainy day', 'Color game', 'Customizable particles'];
     var codearr3 = ['', 'Shruti', 'Divyanshu', 'Prashanth Kumar', 'Queen', 'Dhruva', 'Riddhi', 'Manya', 'Anmol', 'Harsh', 'Anshika'];
     while(arr1.length < 10){
         var r1 = Math.floor(Math.random() * 10) + 1;
@@ -208,7 +208,7 @@ function feed1list(){
     var feed1arr1 = ['', '18653347', '19480187', '19107895', '18772045', '18717961', '14022015'];
     var feed1arr2 = ['', 'Anshika', 'Manya', 'Shruti', 'Harsh', 'Anmol', 'Divyanshu'];
     var feed1arr3 = ['', 'Post', 'Posted a new answer to the question "How to avoid errors?"', 'Posted a new code "Manjar"', 'Replied to a comment on code "Color game"', 'Posted a new code "Curious Coders"', 'Posted a comment on code "Sololearn"'];
-    var feed1arr4 = ['', '<section class="top40"></section><section class="center1">Thankkkkkkkkkk Youuuuuuuu Sooooooooooooooooo Sooooooooooooooooo Sooooooooooooooooo Much</section><section class="top40"></section>', 'Don\'t write any code!<br>Na rhega code na rhege errors.', 'for i in range(100):<br>print("Manjar icecream nhi kha skte")', 'Thank you', '&lt;html&gt;<br>&lt;head&gt;<br>&lt;style&gt;<br>body {<br>...', 'Awesome Bawa'];
+    var feed1arr4 = ['', '<section class="top40"></section><section class="center1">Thankkkkkkkkkk Youuuuuuuu Soooooo Much</section><section class="top40"></section>', 'Don\'t write any code!<br>Na rhega code na rhege errors.', 'for i in range(100):<br>print("Testing")', 'Thank you', '&lt;html&gt;<br>&lt;head&gt;<br>&lt;style&gt;<br>body {<br>...', 'Awesome Bawa'];
     while(arr3.length < 6){
         var r3 = Math.floor(Math.random() * 6) + 1;
         if(arr3.indexOf(r3) === -1) arr3.push(r3);
@@ -251,7 +251,7 @@ function msglist(){
     var arr6 = [];
     var msgarr1 = ['', '18736943', '18772045', '18717961', '9151475', '7109620', '10107008', '18088635', '19181491', '19480187', '14808477', '18044537', '18653347', '18669173'];
     var msgarr2 = ['', 'Pari', 'Harsh', 'Anmol', 'Amardeep Kesharwani', 'SR', 'Amit', 'Suhana', 'Sakshi', 'Manya', 'Raghav', 'Vamshi', 'Anshika', 'Satnam'];
-    var msgarr3 = ['', 'Meri haveli me...', 'Bro ye code...', 'Haa', 'You: Vaise...', 'You: Hehe', 'By god', 'You: xD', 'Gift?', 'You: Chocolate...', 'You: Accha', 'Okay', 'You: Princess Sista...', 'You: Bawa ye clone...'];
+    var msgarr3 = ['', 'Haveli op', 'Bro ye code...', 'Haa', 'You: Vaise...', 'You: Hehe', 'By god', 'You: xD', 'Gift?', 'You: Chocolate...', 'You: Accha', 'Okay', 'You: Princess Sista...', 'You: Bawa ye clone...'];
     while(arr6.length < 13){
         var r6 = Math.floor(Math.random() * 13) + 1;
         if(arr6.indexOf(r6) === -1) arr6.push(r6);
@@ -689,7 +689,7 @@ function showmeme(){
 var num1 = 100;
 var num2 = 1000;
 function submitmsg(){
-    msg10 = ['Hello', 'Converting oxygen to carbon dioxide', 'Chatting with you', 'Fine', 'Just like you!', 'Just like any human being!', 'I\'m mad', 'What do you think?', 'Alien!!', gettime(), 'Javascript', 'Python', 'Java', 'Html', 'Mujhe to kuch kaam nhi h', 'Oxygen ko carbon dioxide me convert kr rha hu', 'Kuch nhi', 'Mujhe nhi pta', 'I don\'t know', 'What do you think?', 'Shut up', 'Nooo', 'Tum ho!', 'Nhii', 'Lol', 'Really?', getbatt(), 'This code is created by Krishna Therokar', 'Btw, what\'s your name?', 'Hehe', 'No', 'Yes', 'What you\'re doing?', 'I don\'t know', 'Can you hack NASA with CSS?', 'Bye', 'What you\'re saying?', 'Nothing much tbh', 'Lol', 'Yeah so', 'You are awesome', 'NiCE to meet you', showmeme()];
+    msg10 = ['Hello', 'Converting oxygen to carbon dioxide', 'Chatting with you', 'I\'m fine', 'Just like you!', 'Just like any human being haha', 'I\'m mad', 'What do you think?', 'Alien!!', gettime(), 'Javascript', 'Python', 'Java', 'Html', 'Kuch kaam nahi lol', 'Oxygen ko carbon dioxide me convert', 'Kuch nhi', 'Mujhe nhi pta', 'I don\'t know', 'What do you think?', 'Shut up', 'Nooo', 'Tum ho!', 'Nhii', 'Lol', 'Really?', getbatt(), 'This code is created by Krishna Therokar', 'Btw, what\'s your name?', 'Hehe', 'No', 'Yes', 'What you\'re doing?', 'I don\'t know', 'Can you hack NASA with CSS?', 'Bye', 'What you\'re saying?', 'Nothing much tbh', 'Lol', 'Yeah so', 'You are awesome', 'Nice', showmeme()];
     suggestions.scrollTo(num1, 0);
     num1 += 100;
     inputformsg.focus();
@@ -946,7 +946,7 @@ function handleTouchMove2(evt){
     xDown = null; yDown = null;
 };
 
-msg11 = ['Hello', 'Converting oxygen to carbon dioxide', 'Inactive', 'Welcome to my Profile', 'Learning', 'Thanks for visiting', 'Just like any human being!', 'Mad af', 'What are you thinking?', 'Alien!!']
+msg11 = ['Hello', 'Converting oxygen to carbon dioxide', 'Inactive', 'Welcome to my Profile', 'Learning', 'Thanks for visiting', 'Just like any human being!', 'Haha wassup?', 'Check out my codes!', 'Alien?']
 
 async function data(userid){
     codeshold.innerHTML = '';
@@ -1022,7 +1022,7 @@ async function data(userid){
     }
     
     streak.innerHTML = '<svg class="firesvg" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><path style="fill:var(--red1);" d="M97.103,353.103C97.103,440.86,168.244,512,256,512l0,0c87.756,0,158.897-71.14,158.897-158.897  c0-88.276-44.138-158.897-14.524-220.69c0,0-47.27,8.828-73.752,79.448c0,0-88.276-88.276-51.394-211.862  c0,0-89.847,35.31-80.451,150.069c8.058,98.406-9.396,114.759-9.396,114.759c0-79.448-62.115-114.759-62.115-114.759  C141.241,247.172,97.103,273.655,97.103,353.103z"/><path style="fill:#FFDC64;" d="M370.696,390.734c0,66.093-51.033,122.516-117.114,121.241  c-62.188-1.198-108.457-48.514-103.512-110.321c2.207-27.586,23.172-72.276,57.379-117.517l22.805,13.793  C229.517,242.023,256,167.724,256,167.724C273.396,246.007,370.696,266.298,370.696,390.734z"/><path style="fill:#FFFFFF;" d="M211.862,335.448c-8.828,52.966-26.483,72.249-26.483,105.931C185.379,476.69,216.998,512,256,512  l0,0c39.284,0,70.729-32.097,70.62-71.381c-0.295-105.508-61.792-158.136-61.792-158.136c8.828,52.966-17.655,79.448-17.655,79.448  C236.141,345.385,211.862,335.448,211.862,335.448z"/><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></><g></g><g></g><g></g><g></g><g></g><g></g></svg>'+streak1+' DAYS STREAK';} catch (err){}
-    var codearrPro = ['', 'Justin bieber bio', 'Facebook app UI', 'My physics engine', 'ToDo list app', 'Magical words', 'What is AI', 'Check your number', 'Rainy day', 'Color game', 'Customizable particles'];
+    var codearrPro = ['', 'Sololearn clone', 'Facebook app UI', 'My physics engine', 'ToDo list app', 'Magical words', 'What is AI', 'Check your number', 'Rainy day', 'Color game', 'Customizable particles'];
     var langArr = ['', 'Web', 'Cpp', 'Java', 'Py', 'C']
     try {
         let codeno = randomNumber1(1, 10);
