@@ -118,6 +118,7 @@ var notifhold1 = getid("notifhold1");
 var msghold1 = getid("msghold1");
 var feedhold1 = getid("feedhold1");
 var feedhold2 = getid("feedhold2");
+var pageNum=null;
 
 var navcontent1 = '<span onclick="settingshow1()" class="menu1">&#9776;</span><svg fill="#fff" class="msg1" onclick="swipe2show2()"  viewBox="0 -30 200 300" style="enable-background:new 0 0 233.058 233.058;" xml:space="preserve"><g><path d="M116.538,4.05C52.284,4.05,0,45.321,0,96.043c0,28.631,16.729,55.208,45.889,72.911c4.525,2.737,7.635,7.283,8.572,12.478   c2.876,16.045-0.991,32.948-6.758,47.576c19.239-9.134,39.064-23.161,54.8-36.63c3.879-3.314,9.055-4.701,14.087-4.354h0.023   c64.191,0,116.445-41.259,116.445-91.987C233.058,45.321,180.792,4.05,116.538,4.05z"/></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg><svg class="bell1" onclick="swipe2show1()" viewBox="0 0 512 512" fill="#fff"><g><path d="M381.7,225.9c0-97.6-52.5-130.8-101.6-138.2c0-0.5,0.1-1,0.1-1.6c0-12.3-10.9-22.1-24.2-22.1c-13.3,0-23.8,9.8-23.8,22.1   c0,0.6,0,1.1,0.1,1.6c-49.2,7.5-102,40.8-102,138.4c0,113.8-28.3,126-66.3,158h384C410.2,352,381.7,339.7,381.7,225.9z"/><path d="M256.2,448c26.8,0,48.8-19.9,51.7-43H204.5C207.3,428.1,229.4,448,256.2,448z"/></g></svg><section id="topinfo" onclick="swipe2show2()">'+rnum(20,100)+'</section>';
 var navcontent2 = '<section onclick="settingshow1()" class="menu1 fixedleft">&#9776;</section><section class="tophold"><section onclick="community1()" class="txtclr7 size4 navtxt1">Practice</section><section onclick="feed3()" class="txtclr7 size4 navtxt1">Feed</section></section>';
@@ -349,10 +350,11 @@ function swipe1show(){
     coursehold3.innerHTML = "";
     notifhold1.innerHTML = "";
     msghold1.innerHTML = "";
+    pageNum = 1;
     window.removeEventListener('scroll', loadanim);
     window.removeEventListener('scroll', topnav1);
     swipe1.addEventListener('touchstart', handleTouchStart1, false);
-    swipe1.addEventListener('touchmove', handleTouchMove1, false);
+    swipe1.addEventListener('touchmove', touchMove, false);
     $('#swipe1').fadeIn();
     $('#bottomnav').show();
     check1();
@@ -508,10 +510,11 @@ function swipe2show(){
     notiflist()
     msglist()
     topnav.innerHTML = navcontent3;
+    pageNum = 2;
     window.removeEventListener('scroll', loadanim);
     window.removeEventListener('scroll', topnav1);
     swipe2.addEventListener('touchstart', handleTouchStart1, false);
-    swipe2.addEventListener('touchmove', handleTouchMove2, false);
+    swipe2.addEventListener('touchmove', touchMove, false);
     coursehold1.innerHTML = "";
     coursehold2.innerHTML = "";
     coursehold3.innerHTML = "";
@@ -599,7 +602,6 @@ function settingshow2(){
     $('#profile2').hide();
     $('#swipe1').hide();
     $('#swipe2').hide();
-    notif1('notifhold1', '1', 'Krishna', 'Posted a comment');
     topnav.innerHTML = navcontent1;
     window.addEventListener('scroll', loadanim);
     window.removeEventListener('scroll', topnav1);
@@ -692,26 +694,22 @@ devScore = 0;
 arrDev = [/Android/i, /webOS/i, /iPhone/i, /iPad/i, /iPod/i, /BlackBerry/i, /Windows Phone/i]
 
 //define function for msgs
-var num1 = 100;
-var num2 = 1000;
+var num2 = 100;
 function submitmsg(){
-    msg10 = ['Hello', 'Converting oxygen to carbon dioxide', 'Chatting with you', 'I\'m fine', 'Just like you!', 'Just like any human being haha', 'I\'m mad', 'What do you think?', 'Alien!!', gettime(), 'Javascript', 'Python', 'Java', 'Html', 'Kuch kaam nahi lol', 'Oxygen ko carbon dioxide me convert', 'Kuch nhi', 'Mujhe nhi pta', 'I don\'t know', 'What do you think?', 'Shut up', 'Nooo', 'Tum ho!', 'Nhii', 'Lol', 'Really?', getbatt(), 'This code is created by Krishna Therokar', 'Btw, what\'s your name?', 'Hehe', 'No', 'Yes', 'What you\'re doing?', 'I don\'t know', 'Can you hack NASA with CSS?', 'Bye', 'What you\'re saying?', 'Nothing much tbh', 'Lol', 'Yeah so', 'You are awesome', 'Nice', showmeme()];
-    num1 += 100;
+    msg10 = ['Hello', 'Converting oxygen to carbon dioxide', 'Chatting with you', 'I\'m fine', 'Just like you!', 'Just like any human being haha', 'I\'m mad', 'What do you think?', 'Alien!!', gettime(), 'Javascript', 'Python', 'Java', 'Html', 'Kuch kaam nahi lol', 'Oxygen ko carbon dioxide me convert', 'Kuch nhi', 'Mujhe nhi pta', 'I don\'t know', 'What do you think?', 'Shut up', 'Nooo', 'Tum ho!', 'Nhii', 'Lol', 'Really?', getbatt(), 'This code is created by Krishna Therokar', 'Btw, what\'s your name?', 'Hehe', 'No', 'Yes', 'What\'re you doing?', 'I don\'t know', 'Can you hack NASA with CSS?', 'Bye', 'What\'re you saying?', 'Nothing much tbh', 'Lol', 'Yeah so', 'Awesome', 'Nice', showmeme()];
     //code for checking the device before focusing the input as it's causing UI glithces in mobile devices
     if (checked==false){
         for (v=0; v<arrDev.length; v++){
-            if (navigator.userAgent.match(arrDev[v])){devScore+=1}
+            navigator.userAgent.match(arrDev[v])?devScore+=1:false;
         }
         checked = true;
     }
-    if (devScore==0){
-        inputformsg.focus();
-    }
+    devScore==0?inputformsg.focus():false;
     msg1 = inputformsg.value;
     livemsgholder1.innerHTML += '<section class="innermsghold1"><section class="whitespace1"></section><section class="innermsg1">'+msg1+'</section></section>';
     inputformsg.value = "";
     window.scrollTo(0, num2);
-    num2 += 1000;
+    num2 += 200;
     msg = msg1.toLowerCase();
     if (msg == 'hello' || msg == 'hi' || msg == 'hlo' || msg == 'hey' || msg == 'hii'){
         msgno = 0
@@ -756,14 +754,24 @@ function submitmsg(){
         msgno = rnum(16,18)
     }
     else {
-        msgno = rnum(28,42)
+        //making the msgs more random lol. They don't even make sense tho.
+        msgno = false;
+        msgRandom = '';
+        numMsg1=rnum(1,3);
+        for (vi=1; vi<=numMsg1; vi++){
+            factor1=Number(12/numMsg1);
+            msgRandom+=msg10[rnum(28+factor1*(vi-1), 28+factor1*vi)];
+            msgRandom+=msgRandom[msgRandom.length-1]=='?'?' ':'.';
+            msgRandom+=vi==numMsg1?'':' ';
+        }
     }
-    msg21 = msg10[msgno];
+    msg21= msgno==false?msgRandom:msg10[msgno];
     if(msgno==42){
         time1=1000
     } else {
         time1 = msg21.length*80
-        if (time1<=600){time1=600}
+        time1<=600?time1=600:false;
+        time1>3000?time1=3000:false;
     }
     
     setTimeout(() => {
@@ -941,49 +949,24 @@ function feed4(){
     }
 }
 check1();
-
+//Touch detector code is inspired from an answer from StackOverFlow
 var xDown = null, yDown = null;
-function getTouches(evt) {
-    return evt.touches  ||  evt.originalEvent.touches;
-}
-
 function handleTouchStart1(evt) {
-    const firstTouch = getTouches(evt)[0];
+    const firstTouch = (evt.touches  ||  evt.originalEvent.touches)[0];
     xDown = firstTouch.clientX;
     yDown = firstTouch.clientY;
 };
-
-function handleTouchMove1(evt){
+function touchMove(evt){
     if (!xDown || !yDown){return}
     var xUp = evt.touches[0].clientX;
     var yUp = evt.touches[0].clientY;
     var xDiff = xDown - xUp;
     var yDiff = yDown - yUp;
     if ( Math.abs(xDiff) > Math.abs(yDiff)){
-        if ( xDiff > 0 ) {
-            feed3();
-        } else if ( xDiff < 0 ) {
-            community1();
-        }
+        if ( xDiff > 10) {pageNum==1?feed3():message1();} else if ( xDiff < 10) {pageNum==1?community1():notification1();}
     }
     xDown = null; yDown = null;
-};
-
-function handleTouchMove2(evt){
-    if (!xDown || !yDown){return}
-    var xUp = evt.touches[0].clientX;
-    var yUp = evt.touches[0].clientY;
-    var xDiff = xDown - xUp;
-    var yDiff = yDown - yUp;
-    if ( Math.abs(xDiff) > Math.abs(yDiff)){
-        if ( xDiff > 0 ) {
-            message1();
-        } else if ( xDiff < 0 ) {
-            notification1();
-        }
-    }
-    xDown = null; yDown = null;
-};
+}
 
 msg11 = ['Hello', 'Converting oxygen to carbon dioxide', 'Inactive', 'Welcome to my Profile', 'Learning', 'Thanks for visiting', 'Just like any human being!', 'Haha wassup?', 'Check out my codes!', 'Alien?']
 
