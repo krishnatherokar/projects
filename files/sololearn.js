@@ -755,7 +755,7 @@ function submitmsg(){
     }
     else {
         //making the msgs more random lol. They don't even make sense tho.
-        msgno = false;
+        msgno = 'Random';
         msgRandom = '';
         numMsg1=rnum(1,3);
         for (vi=1; vi<=numMsg1; vi++){
@@ -765,7 +765,7 @@ function submitmsg(){
             msgRandom+=vi==numMsg1?'':' ';
         }
     }
-    msg21= msgno==false?msgRandom:msg10[msgno];
+    msg21= msgno=='Random'?msgRandom:msg10[msgno];
     if(msgno==42){
         time1=1000
     } else {
