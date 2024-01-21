@@ -686,13 +686,27 @@ function showmeme(){
     }
     return imgg;
 }
+
+checked = false;
+devScore = 0;
+arrDev = [/Android/i, /webOS/i, /iPhone/i, /iPad/i, /iPod/i, /BlackBerry/i, /Windows Phone/i]
+
 //define function for msgs
 var num1 = 100;
 var num2 = 1000;
 function submitmsg(){
     msg10 = ['Hello', 'Converting oxygen to carbon dioxide', 'Chatting with you', 'I\'m fine', 'Just like you!', 'Just like any human being haha', 'I\'m mad', 'What do you think?', 'Alien!!', gettime(), 'Javascript', 'Python', 'Java', 'Html', 'Kuch kaam nahi lol', 'Oxygen ko carbon dioxide me convert', 'Kuch nhi', 'Mujhe nhi pta', 'I don\'t know', 'What do you think?', 'Shut up', 'Nooo', 'Tum ho!', 'Nhii', 'Lol', 'Really?', getbatt(), 'This code is created by Krishna Therokar', 'Btw, what\'s your name?', 'Hehe', 'No', 'Yes', 'What you\'re doing?', 'I don\'t know', 'Can you hack NASA with CSS?', 'Bye', 'What you\'re saying?', 'Nothing much tbh', 'Lol', 'Yeah so', 'You are awesome', 'Nice', showmeme()];
     num1 += 100;
-    inputformsg.focus();
+    //code for checking the device before focusing the input as it's causing UI glithces in mobile devices
+    if (checked==false){
+        for (v=0; v<arrDev.length; v++){
+            if (navigator.userAgent.match(arrDev[v])){devScore+=1}
+        }
+        checked = true;
+    }
+    if (devScore==0){
+        inputformsg.focus();
+    }
     msg1 = inputformsg.value;
     livemsgholder1.innerHTML += '<section class="innermsghold1"><section class="whitespace1"></section><section class="innermsg1">'+msg1+'</section></section>';
     inputformsg.value = "";
@@ -749,6 +763,7 @@ function submitmsg(){
         time1=1000
     } else {
         time1 = msg21.length*80
+        if (time1<=600){time1=600}
     }
     
     setTimeout(() => {
