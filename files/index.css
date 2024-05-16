@@ -18,33 +18,32 @@ body {
     background-color: #F4F4F8;
 }
 
-@media only screen and (min-width: 600px){
+@media only screen and (min-width: 800px){
     #mainHold {
         display: flex;
         justify-content: space-around;
     }
-
     .card {
         margin: 20px;
     }
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 800px){
     .card {
-        margin: 20px auto;
+        margin: 60px auto;
         max-width: 400px;
     }
 }
 
 #mainHold {
-    margin: 20px;
+    margin: 40px;
 }
 
 .card {
     padding: 20px;
-    border-radius: 6px;
+    border-radius: 10px;
     background-color: #f8f9fa;
-    color: #7b7b7b;
+    color: #8c8c8c;
 }
 
 .title1 {
