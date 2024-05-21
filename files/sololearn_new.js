@@ -60,6 +60,7 @@ function sugest(sug){
 
 //define elements
 var all1 = getq("*");
+cssRoot = document.querySelector(':root');
 
 var codes = getid("codes");
 var loader1 = getid("loader1");
@@ -807,33 +808,25 @@ for(i=0; i<arrSug.length; i++){
 }
 
 function theme1(codee){
-    for (i=0; i<all1.length; i++){
-        all1[i].style.setProperty('--blue1', '#'+codee);
-    }
+    cssRoot.style.setProperty('--blue1', '#'+codee);
 }
 arrClr = ['dark1', 'dark2', 'dark3', 'dark4', 'white1', 'white2', 'white3', 'back2']
 function theme2(){
-    for (i=0; i<all1.length; i++){
-        arrHex = ['202020', '404040', '606060', '808080', 'ffffff', 'f3f3f3', 'cacaca', 'bdbdbd40']
-        for (j=0; j<arrClr.length; j++){
-            all1[i].style.setProperty('--'+arrClr[j], '#'+arrHex[j]);
-        }
+    arrHex = ['202020', '404040', '606060', '808080', 'ffffff', 'f3f3f3', 'cacaca', 'bdbdbd40']
+    for (j=0; j<arrClr.length; j++){
+        cssRoot.style.setProperty('--'+arrClr[j], '#'+arrHex[j]);
     }
 }
 function theme3(){
-    for (i=0; i<all1.length; i++){
-        arrHex = ['f3f3f3', 'eeeeee', 'd8d8d8', 'c6c6c6', '292c39', '1f222f', '707070', '40404040']
-        for (j=0; j<arrClr.length; j++){
-            all1[i].style.setProperty('--'+arrClr[j], '#'+arrHex[j]);
-        }
+    arrHex = ['f3f3f3', 'eeeeee', 'd8d8d8', 'c6c6c6', '292c39', '1f222f', '707070', '40404040']
+    for (j=0; j<arrClr.length; j++){
+        cssRoot.style.setProperty('--'+arrClr[j], '#'+arrHex[j]);
     }
 }
 function theme4(){
-    for (i=0; i<all1.length; i++){
-        arrHex = ['f3f3f3', 'eeeeee', 'd8d8d8', 'c6c6c6', '343434', '282828', '707070', '40404040']
-        for (j=0; j<arrClr.length; j++){
-            all1[i].style.setProperty('--'+arrClr[j], '#'+arrHex[j]);
-        }
+    arrHex = ['f3f3f3', 'eeeeee', 'd8d8d8', 'c6c6c6', '343434', '282828', '707070', '40404040']
+    for (j=0; j<arrClr.length; j++){
+        cssRoot.style.setProperty('--'+arrClr[j], '#'+arrHex[j]);
     }
 }        
 
