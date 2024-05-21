@@ -22,7 +22,7 @@ function round2(iid){
 }
 
 function question1(iid, ques1, tag, id1, user, likes){
-    getid(iid).innerHTML += `<section class="card3"><span class="upvotes">${svgQ1,likes}</span><span class="question">${ques1}</span><br><span class="tag">${tag}</span><img onclick="profile1(\'${user}\')" class="avatar1" src="https://api.sololearn.com/Uploads/Avatars/${id1}.jpg" onerror=this.src="files/img/sololearnLogo.webp"><span onclick="profile1(\'${user}\')" class="name1">${user}</span><span class="views">${svgQ2, rnum(100, 1000)}</span></section>`;
+    getid(iid).innerHTML += `<section class="card3"><span class="upvotes">${svgQ1,likes}</span><span class="question">${ques1}</span><br><span class="tag">${tag}</span><img onclick="profile1(\'${user}\')" class="avatar1" src="https://avatar.iran.liara.run/username?username=${user}" onerror=this.src="files/img/sololearnLogo.webp"><span onclick="profile1(\'${user}\')" class="name1">${user}</span><span class="views">${svgQ2, rnum(100, 1000)}</span></section>`;
 }
 
 function course1(iid, src, cls){
@@ -35,23 +35,23 @@ function coach1(iid, src){
 }
 
 function code3(iid, id1, codename1, user, likes){
-    getid(iid).innerHTML += `<section class="card3 flex"><section class="wrapimg"><img class="avatar1" onclick="profile1(\'${user}\')" src="https://api.sololearn.com/Uploads/Avatars/${id1}.jpg" onerror=this.src="files/img/sololearnLogo.webp"></section><section class="wrapcode"><span class="codename1">${codename1}</span><span class="name1"><span onclick="profile1(\'${user}\')">${user}</span></span><span class="views">${svgC1} ${rnum(2, 24)} Hrs${svgC2} ${rnum(200, 2000)}</span><span class="upvotes">${svgC3}${likes}</span></section></section>`;
+    getid(iid).innerHTML += `<section class="card3 flex"><section class="wrapimg"><img class="avatar1" onclick="profile1(\'${user}\')" src="https://avatar.iran.liara.run/username?username=${user}" onerror=this.src="files/img/sololearnLogo.webp"></section><section class="wrapcode"><span class="codename1">${codename1}</span><span class="name1"><span onclick="profile1(\'${user}\')">${user}</span></span><span class="views">${svgC1} ${rnum(2, 24)} Hrs${svgC2} ${rnum(200, 2000)}</span><span class="upvotes">${svgC3}${likes}</span></section></section>`;
 }
 
 function feed1(iid, id1, user, title, content){
-    getid(iid).innerHTML += `<section class="card1"><img class="avatar4" onclick="profile1(\'${user}\')" src="https://api.sololearn.com/Uploads/Avatars/${id1}.jpg" onerror=this.src="files/img/sololearnLogo.webp"><span onclick="profile1(\'${user}\')" class="blueclr1 size2">${user} </span><span class="txtclr5 size2">${title}</span><br><section class="content1"><span class="right ic2">"</span><span class="maincont">${content}</span><span class="left ic1">"</span></section><span class="arroww1">&gt;</span><span class="likess">+${rnum(10, 100)}</span><span class="arroww2">&lt;</span><span class="time1">${rnum(2, 24)} Hrs</span></section>`;
+    getid(iid).innerHTML += `<section class="card1"><img class="avatar4" onclick="profile1(\'${user}\')" src="https://avatar.iran.liara.run/username?username=${user}" onerror=this.src="files/img/sololearnLogo.webp"><span onclick="profile1(\'${user}\')" class="blueclr1 size2">${user} </span><span class="txtclr5 size2">${title}</span><br><section class="content1"><span class="right ic2">"</span><span class="maincont">${content}</span><span class="left ic1">"</span></section><span class="arroww1">&gt;</span><span class="likess">+${rnum(10, 100)}</span><span class="arroww2">&lt;</span><span class="time1">${rnum(2, 24)} Hrs</span></section>`;
 }
 
 function feed2(iid, id1, user, title, imgsrc){
-    getid(iid).innerHTML += `<section class="card1"><img class="avatar4" onclick="profile1(\'${user}\')" src="https://api.sololearn.com/Uploads/Avatars/${id1}.jpg" onerror=this.src="files/img/sololearnLogo.webp"><span onclick="profile1(\'${user}\')" class="blueclr1 size2">${user} </span><span class="txtclr5 size2">${title}</span><br><img class="postimg1" src="${imgsrc}" onload=this.style.height="auto" onerror=this.src="files/img/Noimg.png"><span class="arroww1">&gt;</span><span class="likess">+${rnum(10, 1000)}</span><span class="arroww2">&lt;</span><span class="time1">${rnum(2, 24)} Hrs</span></section>`;
+    getid(iid).innerHTML += `<section class="card1"><img class="avatar4" onclick="profile1(\'${user}\')" src="https://avatar.iran.liara.run/username?username=${user}" onerror=this.src="files/img/sololearnLogo.webp"><span onclick="profile1(\'${user}\')" class="blueclr1 size2">${user} </span><span class="txtclr5 size2">${title}</span><br><img class="postimg1" src="${imgsrc}" onload=this.style.height="auto" onerror=this.src="files/img/Noimg.png"><span class="arroww1">&gt;</span><span class="likess">+${rnum(10, 1000)}</span><span class="arroww2">&lt;</span><span class="time1">${rnum(2, 24)} Hrs</span></section>`;
 }
 
 function notif1(iid, id1, user, title){
-    getid(iid).innerHTML += `<section class="card3"><img class="avatar1" onclick="profile1(\'${user}\')" src="https://api.sololearn.com/Uploads/Avatars/${id1}.jpg" onerror=this.src="files/img/sololearnLogo.webp"><span onclick="profile1(\'${user}\')" class="blueclr1 size2">${user} </span><span class="txtclr6 size2">${title}</span><span class="txtclr3 time1">${rnum(2, 24)} Hrs</span></section>`;
+    getid(iid).innerHTML += `<section class="card3"><img class="avatar1" onclick="profile1(\'${user}\')" src="https://avatar.iran.liara.run/username?username=${user}" onerror=this.src="files/img/sololearnLogo.webp"><span onclick="profile1(\'${user}\')" class="blueclr1 size2">${user} </span><span class="txtclr6 size2">${title}</span><span class="txtclr3 time1">${rnum(2, 24)} Hrs</span></section>`;
 }
 
 function msg3(iid, id1, user, title){
-    getid(iid).innerHTML += `<section class="card3"><span class="txtclr3 time1">${rnum(2, 24)} Hrs</span><section class="flex"><img onclick="profile1(\'${user}\')" class="avatar1" src="https://api.sololearn.com/Uploads/Avatars/${id1}.jpg" onerror=this.src="files/img/sololearnLogo.webp"><section onclick="chatbot2(${id1}, \'${user}\')" class="main1"><span class="blueclr1 size2">${user}</span><br><span class="txtclr6 size2">${title}</span></section></section></section>`;
+    getid(iid).innerHTML += `<section class="card3"><span class="txtclr3 time1">${rnum(2, 24)} Hrs</span><section class="flex"><img onclick="profile1(\'${user}\')" class="avatar1" src="https://avatar.iran.liara.run/username?username=${user}" onerror=this.src="files/img/sololearnLogo.webp"><section onclick="chatbot2(${id1}, \'${user}\')" class="main1"><span class="blueclr1 size2">${user}</span><br><span class="txtclr6 size2">${title}</span></section></section></section>`;
 }
 
 function sugest(sug){
@@ -568,7 +568,7 @@ function chatbot2(id1, user){
     inputformsg.value = '';
     topnav.style.background = "var(--blue1)";
     $('#swipe2').hide();
-    topnav.innerHTML = `<section class="flex"><svg onclick="swipe2show2()" id="backsvg" viewBox="0 0 24 24"><path fill="var(--white4)" d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg><br><img class="avatar1" onclick="profile1(\'${user}\')" src="https://api.sololearn.com/Uploads/Avatars/${id1}.jpg" onerror=this.src="files/img/sololearnLogo.webp"><br><span onclick="profile1(\'${user}\')" class="size3 txtclr8">${user}</span></section>`;
+    topnav.innerHTML = `<section class="flex"><svg onclick="swipe2show2()" id="backsvg" viewBox="0 0 24 24"><path fill="var(--white4)" d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg><br><img class="avatar1" onclick="profile1(\'${user}\')" src="https://avatar.iran.liara.run/username?username=${user}" onerror=this.src="files/img/sololearnLogo.webp"><br><span onclick="profile1(\'${user}\')" class="size3 txtclr8">${user}</span></section>`;
     window.removeEventListener('scroll', loadanim);
     window.removeEventListener('scroll', topnav1);
     coursehold1.innerHTML = "";
@@ -1010,7 +1010,7 @@ function data(userid){
     }
     
     try {
-        avatar.src = "https://api.sololearn.com/Uploads/Avatars/1.jpg";
+        avatar.src = `https://avatar.iran.liara.run/username?username=${userid}`;
         getid('avatar').setAttribute("class", userid);
         username.innerHTML = username01;
         levell.innerHTML = levell01;
