@@ -755,16 +755,8 @@ function submitmsg(){
         msgno = rnum(16,18)
     }
     else {
-        //making the msgs more random lol. They don't even make sense tho.
         msgno = 'Random';
-        msgRandom = '';
-        numMsg1=rnum(1,3);
-        for (vi=1; vi<=numMsg1; vi++){
-            factor1=Number(12/numMsg1);
-            msgRandom+=msg10[rnum(28+factor1*(vi-1), 28+factor1*vi)];
-            msgRandom+=msgRandom[msgRandom.length-1]=='?'?' ':'.';
-            msgRandom+=vi==numMsg1?'':' ';
-        }
+        msgRandom = msg10[rnum(1,43)];
     }
     msg21= msgno=='Random'?msgRandom:msg10[msgno];
     if(msgno==42){
