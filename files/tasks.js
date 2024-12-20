@@ -56,8 +56,9 @@ function visQuote(){
     $("#taskForm").hide();
     $("#topnav1").hide();
     $("#topnav2").show();
-    const url1 = "https://api.quotable.io/random";
-    fetch(url1).then((data1) => data1.json()).then((item1) => {quoteMain.innerHTML = item1.content});
+    setTimeout(() => {
+        quoteMain.innerHTML = 'Quotes API is not working';
+    }, 1000);
     window.scrollTo(0 ,0);
     getclass("bottomIc")[0].setAttribute("state1", "");
     getclass("bottomIc")[1].setAttribute("state1", "");
