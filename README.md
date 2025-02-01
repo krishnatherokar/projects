@@ -3,7 +3,7 @@
 Hey there! These are some of my web projects that I created during my Class X vacations (2021). You can [visit homepage](https://krishnatherokar.github.io/projects/) or click on the project names to view.
 
 ## [Sololearn Clone](https://krishnatherokar.github.io/projects/sololearn.html)
-`
+
 > **Sololearn** is an app designed for learning to code, and it marked the starting point of my coding journey. This project is essentially a UI clone of the Sololearn app. I also included a chatbot, and here's a fun secret: The chatbot uses simple `if/else` conditions to function. (Well, everyone was a noob at some point ~_~)
 
 ### Technologies Used
@@ -18,8 +18,9 @@ Hey there! These are some of my web projects that I created during my Class X va
 - Uses DOM manipulation to switch sections (profile, chat, code) instead of separate files and paths (Newbie mistake)
 
 ### User Interface
-![](assets\profilepage.png)
-![](assets\sidebar.png)
+![Profile page](https://krishnatherokar.github.io/projects/assets/profilepage.png)
+---
+![Sidebar](https://krishnatherokar.github.io/projects/assets/sidebar.png)
 
 
 ## [Tasks](https://krishnatherokar.github.io/projects/tasks.html)
@@ -35,4 +36,4 @@ Hey there! These are some of my web projects that I created during my Class X va
 - Automatically removes completed tasks the next day
 
 ### User Interface
-![](assets\tasks.png)
+![Tasks user interface](https://krishnatherokar.github.io/projects/assets/tasks.png)
