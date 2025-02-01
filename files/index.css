@@ -25,6 +25,7 @@ body {
     }
     .card {
         margin: 20px;
+        flex: 1;
     }
 }
 
