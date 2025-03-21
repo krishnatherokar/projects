@@ -18,9 +18,9 @@ Hey there! These are some of my web projects that I created during my Class X va
 - Uses DOM manipulation to switch sections (profile, chat, code) instead of separate files and paths (Newbie mistake)
 
 ### User Interface
-![Profile page](https://krishnatherokar.github.io/projects/assets/profilepage.png)
----
-![Sidebar](https://krishnatherokar.github.io/projects/assets/sidebar.png)
+| Profile | Themes |
+| - | - |
+| ![Profile page](https://krishnatherokar.github.io/projects/assets/profilepage.png) | ![Sidebar](https://krishnatherokar.github.io/projects/assets/sidebar.png) |
 
 
 ## [Tasks](https://krishnatherokar.github.io/projects/tasks.html)
@@ -36,4 +36,6 @@ Hey there! These are some of my web projects that I created during my Class X va
 - Automatically removes completed tasks the next day
 
 ### User Interface
-![Tasks user interface](https://krishnatherokar.github.io/projects/assets/tasks.png)
+| Home | Quotes |
+| - | - |
+| ![Tasks user interface](https://krishnatherokar.github.io/projects/assets/tasks.png) | ![Quotes page](https://krishnatherokar.github.io/projects/assets/quotes.png) |
